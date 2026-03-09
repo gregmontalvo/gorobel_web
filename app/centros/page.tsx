@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "gimnasio cerca de mí llodio",
     "crossfit amurrio instalaciones",
     "centro jiu jitsu llodio",
-    "dónde entrenar encartaciones",
+    "dónde entrenar euskadi",
   ],
   alternates: {
     canonical: "https://gorobelgara.com/centros",
@@ -115,7 +115,7 @@ export default function CentrosPage() {
             Cerca de ti, en Llodio y Amurrio.
           </h1>
           <p className="text-white/65 text-lg mt-4 max-w-xl">
-            Más de 1.300 m² de instalaciones deportivas en las Encartaciones.
+            Más de 1.300 m² de instalaciones deportivas en Euskadi.
             4 centros en 2026.
           </p>
           {/* Map quick links */}
@@ -258,7 +258,7 @@ export default function CentrosPage() {
           </h2>
           <p className="text-white/70 text-lg max-w-lg mx-auto mb-8">
             500 m² de sala de musculación con más de 300.000€ en equipamiento.
-            El centro que las Encartaciones necesitan.
+            El centro que Euskadi necesita.
           </p>
           <Link href="/nuevo-gimnasio" className="btn-primary bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)]">
             Founding Members →

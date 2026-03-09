@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     "sala musculación llodio",
     "nuevo gimnasio llodio 2026",
     "founding member gimnasio llodio",
-    "musculación encartaciones",
+    "musculación euskadi",
     "gorobel musculación",
     "mejor sala musculación llodio",
     "gimnasio musculación álava",
     "peso libre llodio",
     "apertura gimnasio llodio 2026",
     "musculación país vasco llodio",
-    "gym musculación encartaciones",
+    "gym musculación euskadi",
     "precio fundador gimnasio llodio",
   ],
   alternates: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://gorobelgara.com/nuevo-gimnasio",
-    title: "El mayor gimnasio de las Encartaciones — Founding Members 2026",
+    title: "El mayor gimnasio de Euskadi — Founding Members 2026",
     description: "500 m² · +300.000€ en equipamiento · Llodio, Álava. Reserva tu plaza de Founding Member.",
     siteName: "Gorobel Kirol Gunea",
     locale: "es_ES",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "El mayor gimnasio de las Encartaciones abre en 2026 — Gorobel",
+    title: "El mayor gimnasio de Euskadi abre en 2026 — Gorobel",
     description: "500 m² · +300.000€ en equipamiento · Llodio, Álava.",
     images: ["https://gorobelgara.com/wp-content/uploads/2024/03/photo_2024-02-28_23-33-44-1024x768.jpg"],
   },
@@ -109,7 +109,7 @@ export default function NuevoGimnasioPage() {
       "@type": "Event",
       name: "Apertura Gorobel Musculación — Nuevo Gimnasio Llodio",
       description:
-        "Apertura del mayor centro de musculación de las Encartaciones. 500 m² y más de 300.000€ en equipamiento en Llodio, Álava.",
+        "Apertura del mayor centro de musculación de Euskadi. 500 m² y más de 300.000€ en equipamiento en Llodio, Álava.",
       startDate: "2026-11-01",
       eventStatus: "https://schema.org/EventScheduled",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
@@ -302,7 +302,7 @@ export default function NuevoGimnasioPage() {
               </h2>
               <p className="text-white/50 text-lg leading-relaxed mb-8">
                 Más de 300.000€ invertidos en equipamiento de primera línea. No hay nada
-                igual en las Encartaciones.
+                igual en Euskadi.
               </p>
               <div className="grid sm:grid-cols-2 gap-3">
                 {[
@@ -392,7 +392,7 @@ export default function NuevoGimnasioPage() {
           </div>
           <p className="font-display font-black text-white text-2xl lg:text-3xl leading-snug mb-8">
             Llevamos desde 2010 construyendo la comunidad deportiva más fuerte
-            de las Encartaciones. Este nuevo gimnasio es el siguiente paso.
+            de Euskadi. Este nuevo gimnasio es el siguiente paso.
           </p>
           <div className="flex items-center justify-center gap-3">
             <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-display font-black text-white text-sm">

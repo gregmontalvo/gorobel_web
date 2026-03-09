@@ -12,13 +12,13 @@ import { faqSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Gorobel Kirol Gunea — CrossFit y Hyrox en Llodio y Amurrio",
   description:
-    "Pioneros del CrossFit y Hyrox en el País Vasco desde 2010. CrossTraining, Boxeo, Kickboxing, Jiu Jitsu y OCR en Llodio y Amurrio, las Encartaciones.",
+    "Pioneros del CrossFit y Hyrox en el País Vasco desde 2010. CrossTraining, Boxeo, Kickboxing, Jiu Jitsu y OCR en Llodio y Amurrio, Euskadi.",
   keywords: [
     "gimnasio llodio",
     "crossfit llodio",
     "hyrox llodio",
     "crosstraining llodio",
-    "mejor gimnasio encartaciones",
+    "mejor gimnasio euskadi",
     "gimnasio amurrio",
     "entrenar en llodio",
     "gimnasio sin permanencia llodio",

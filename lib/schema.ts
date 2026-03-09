@@ -21,7 +21,7 @@ export const organizationSchema = {
   areaServed: [
     { "@type": "City", name: "Llodio" },
     { "@type": "City", name: "Amurrio" },
-    { "@type": "AdministrativeArea", name: "Encartaciones" },
+    { "@type": "AdministrativeArea", name: "Euskadi" },
   ],
   telephone: "+34667521542",
   email: "info@gorobelgara.com",

@@ -60,7 +60,7 @@ export const centers: Center[] = [
     address: "Amurrio, Álava",
     surface: "300 m²",
     description:
-      "Nuestra extensión en Amurrio. 300 m² con el mismo ambiente, calidad de coaching y programación que en Llodio. La comunidad Gorobel crece en las Encartaciones.",
+      "Nuestra extensión en Amurrio. 300 m² con el mismo ambiente, calidad de coaching y programación que en Llodio. La comunidad Gorobel crece en Euskadi.",
     activities: ["CrossTraining", "Jiu Jitsu"],
     phone: "+34 667 521 542",
     email: "info@gorobelgara.com",

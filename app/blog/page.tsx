@@ -7,7 +7,7 @@ import { blogPosts } from "@/lib/data/blog";
 export const metadata: Metadata = {
   title: "Blog — Consejos de entrenamiento y salud en Llodio y Amurrio",
   description:
-    "Blog de Gorobel Kirol Gunea: consejos de CrossTraining, nutrición, salud mental, preparación para OCR y más. Contenido para mejorar tu bienestar en las Encartaciones.",
+    "Blog de Gorobel Kirol Gunea: consejos de CrossTraining, nutrición, salud mental, preparación para OCR y más. Contenido para mejorar tu bienestar en Euskadi.",
   keywords: [
     "blog crossfit llodio",
     "consejos crosstraining",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://gorobelgara.com/blog",
-    title: "Blog de Gorobel — Entrenamiento, salud y comunidad en las Encartaciones",
+    title: "Blog de Gorobel — Entrenamiento, salud y comunidad en Euskadi",
     description:
       "Artículos de CrossTraining, nutrición, salud mental y más desde Gorobel Kirol Gunea en Llodio y Amurrio.",
     siteName: "Gorobel Kirol Gunea",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog Gorobel — Entrenamiento y salud en las Encartaciones",
+    title: "Blog Gorobel — Entrenamiento y salud en Euskadi",
     description: "Guías, consejos y artículos de entrenamiento desde Llodio y Amurrio.",
     images: ["https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg"],
   },
@@ -73,7 +73,7 @@ export default function BlogPage() {
             Aprende, mejora, supérate.
           </h1>
           <p className="text-white/60 text-lg mt-4">
-            Artículos de entrenamiento, salud y comunidad desde las Encartaciones.
+            Artículos de entrenamiento, salud y comunidad desde Euskadi.
           </p>
         </div>
       </section>

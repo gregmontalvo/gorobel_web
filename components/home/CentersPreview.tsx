@@ -17,7 +17,7 @@ const previewCenters = [
     city: "Amurrio",
     name: "Gorobel Amurrio",
     surface: "300 m²",
-    description: "La misma filosofía Gorobel en Amurrio. CrossTraining y Jiu Jitsu para la zona de Encartaciones.",
+    description: "La misma filosofía Gorobel en Amurrio. CrossTraining y Jiu Jitsu en Euskadi.",
     image: "https://gorobelgara.com/wp-content/uploads/2025/06/1-Editada-e1749203233595.png",
     href: "/centros#amurrio",
   },

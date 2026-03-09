@@ -27,7 +27,7 @@ export const blogPosts: BlogPost[] = [
     slug: "sala-musculacion-llodio-2026",
     title: "Por qué Llodio necesitaba una sala de musculación de verdad",
     excerpt:
-      "En mayo de 2026 abriremos el mayor centro de musculación de las Encartaciones. Te contamos qué hay detrás de esta decisión y qué va a suponer para la zona.",
+      "En mayo de 2026 abriremos el mayor centro de musculación de Euskadi. Te contamos qué hay detrás de esta decisión y qué va a suponer para la zona.",
     category: "Instalaciones",
     date: "2026-02-15",
     readTime: "4 min",
@@ -35,19 +35,19 @@ export const blogPosts: BlogPost[] = [
     imageAlt: "Nueva sala de musculación Gorobel Llodio 2026",
     featured: true,
     description:
-      "En 2026 abrimos la mayor sala de musculación de las Encartaciones en Llodio: 500 m² y más de 300.000€ en equipamiento. Descubre por qué este proyecto nació y qué supone para la zona.",
+      "En 2026 abrimos la mayor sala de musculación de Euskadi en Llodio: 500 m² y más de 300.000€ en equipamiento. Descubre por qué este proyecto nació y qué supone para la zona.",
     keywords: [
       "sala musculacion llodio 2026",
       "gimnasio musculación llodio",
       "nuevo gimnasio llodio",
-      "centro deportivo encartaciones",
+      "centro deportivo euskadi",
       "musculación álava",
     ],
     author: "Gorobel Kirol Gunea",
     body: [
       {
         type: "p",
-        text: "Llevamos más de 15 años siendo el referente del CrossFit y el entrenamiento funcional en las Encartaciones. Pero había algo que siempre nos pedían: una sala de musculación de verdad. No un espacio pequeño con cuatro mancuernas, sino un centro completo donde poder entrenar fuerza con el mismo nivel de calidad que ofrecemos en nuestras clases de CrossTraining.",
+        text: "Llevamos más de 15 años siendo el referente del CrossFit y el entrenamiento funcional en Euskadi. Pero había algo que siempre nos pedían: una sala de musculación de verdad. No un espacio pequeño con cuatro mancuernas, sino un centro completo donde poder entrenar fuerza con el mismo nivel de calidad que ofrecemos en nuestras clases de CrossTraining.",
       },
       {
         type: "h2",
@@ -111,7 +111,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "p",
-        text: "La apertura está prevista para mayo de 2026. Si vives en Llodio, Amurrio, Gordexola, Güeñes, Zalla o cualquier localidad de las Encartaciones, este es tu gimnasio.",
+        text: "La apertura está prevista para mayo de 2026. Si vives en Llodio, Amurrio, Gordexola, Güeñes, Zalla o cualquier localidad de Euskadi, este es tu gimnasio.",
       },
     ],
   },
@@ -220,13 +220,13 @@ export const blogPosts: BlogPost[] = [
     imageAlt: "Entrenamiento en Gorobel Kirol Gunea Llodio",
     featured: false,
     description:
-      "¿Buscas el mejor gimnasio en Llodio para perder peso? Comparativa honesta de opciones de entrenamiento en las Encartaciones y por qué el CrossTraining supera a los gimnasios convencionales para perder grasa.",
+      "¿Buscas el mejor gimnasio en Llodio para perder peso? Comparativa honesta de opciones de entrenamiento en Euskadi y por qué el CrossTraining supera a los gimnasios convencionales para perder grasa.",
     keywords: [
       "mejor gimnasio llodio",
       "gimnasio llodio perder peso",
       "crossfit vs gimnasio convencional llodio",
       "donde entrenar llodio",
-      "gimnasio encartaciones",
+      "gimnasio euskadi",
     ],
     author: "Gorobel Kirol Gunea",
     body: [
@@ -325,7 +325,7 @@ export const blogPosts: BlogPost[] = [
     body: [
       {
         type: "p",
-        text: "Cuando la gente piensa en Kickboxing, piensa en golpes y combate. Y sí, hay golpes —eso es parte del encanto. Pero lo que realmente hace que cientos de personas en las Encartaciones se enganchen al Kickboxing y no lo abandonen tiene mucho más que ver con lo que pasa en tu cabeza que con lo que pasa en el saco.",
+        text: "Cuando la gente piensa en Kickboxing, piensa en golpes y combate. Y sí, hay golpes —eso es parte del encanto. Pero lo que realmente hace que cientos de personas en Euskadi se enganchen al Kickboxing y no lo abandonen tiene mucho más que ver con lo que pasa en tu cabeza que con lo que pasa en el saco.",
       },
       {
         type: "h2",

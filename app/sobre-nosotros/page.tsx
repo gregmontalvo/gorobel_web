@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "gorobel kirol gunea historia",
     "pioneros hyrox euskadi",
     "gym familiar llodio",
-    "comunidad crossfit encartaciones",
+    "comunidad crossfit euskadi",
     "gorobel fundación 2010",
     "valores gimnasio llodio",
   ],
@@ -48,12 +48,28 @@ export const metadata: Metadata = {
 };
 
 const milestones = [
-  { year: "2010", event: "Fundación de Gorobel en Llodio — Pioneros del CrossFit en el País Vasco y las Encartaciones" },
+  { year: "2010", event: "Fundación de Gorobel en Llodio — Pioneros del CrossFit en el País Vasco y Euskadi" },
   { year: "2014", event: "Apertura del centro de artes marciales en Llodio" },
   { year: "2018", event: "Expansión a Amurrio — CrossTraining y Jiu Jitsu" },
   { year: "2019", event: "Introducción del Hyrox en el País Vasco — primeros en Euskadi en ofrecer entrenamientos específicos para esta disciplina" },
   { year: "2022", event: "Apertura de Garazi — 3er espacio en Llodio" },
-  { year: "2024", event: "Integración con AimHarder y Badgie para gestión digital" },
+  {
+    year: "2025",
+    event: (
+      <>
+        Integración con{" "}
+        <Link
+          href="https://www.badgie.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[var(--color-sage)] hover:text-[var(--color-sage-light)] underline underline-offset-2 transition-colors"
+        >
+          Badgie
+        </Link>
+        , nuestra plataforma digital para la gestión del club.
+      </>
+    ),
+  },
   { year: "2026", event: "Nuevo gimnasio de musculación en Llodio — 500 m²" },
 ];
 
@@ -120,7 +136,7 @@ export default function SobreNosotrosPage() {
           </h1>
           <p className="text-white/65 text-xl leading-relaxed max-w-2xl">
             Lo que empezó como una afiliación CrossFit en Llodio en 2010 se convirtió, años después,
-            en el primer centro de Hyrox de Euskadi. Una comunidad que no para de crecer en las Encartaciones.
+            en el primer centro de Hyrox de Euskadi. Una comunidad que no para de crecer en Euskadi.
           </p>
         </div>
       </section>
@@ -138,7 +154,7 @@ export default function SobreNosotrosPage() {
                 Gorobel Kirol Gunea nació en 2010 cuando Joseba y su equipo trajeron el CrossFit
                 a Llodio, siendo de los primeros en ofrecer esta metodología en el País Vasco.
                 Sin referencias locales, sin comunidad establecida: solo la convicción de que
-                el CrossFit funcional y comunitario transformaría vidas en las Encartaciones.
+                el CrossFit funcional y comunitario transformaría vidas en Euskadi.
               </p>
               <p>
                 En 2019 dieron otro paso pionero: introdujeron el Hyrox en Euskadi, convirtiéndose
@@ -148,8 +164,8 @@ export default function SobreNosotrosPage() {
               </p>
               <p>
                 En 2026 llegamos al siguiente nivel: una sala de musculación de 500 m² en
-                Llodio, con más de 300.000€ en equipamiento. Porque las Encartaciones
-                se merecen lo mejor.
+                Llodio, con más de 300.000€ en equipamiento. Porque Euskadi
+                se merece lo mejor.
               </p>
             </div>
           </div>

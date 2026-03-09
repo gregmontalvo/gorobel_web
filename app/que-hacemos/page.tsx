@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "entrenamiento spartan llodio",
     "clases kickboxing principiantes llodio",
     "jiu jitsu adultos llodio",
-    "artes marciales llodio encartaciones",
+    "artes marciales llodio euskadi",
     "clases boxeo baratas llodio",
   ],
   alternates: {
