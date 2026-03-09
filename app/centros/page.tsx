@@ -26,6 +26,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://gorobelgara.com/centros",
   },
+  openGraph: {
+    type: "website",
+    url: "https://gorobelgara.com/centros",
+    title: "Nuestros Centros en Llodio y Amurrio — Más de 1.300 m² | Gorobel",
+    description:
+      "3 centros activos en Llodio y Amurrio con más de 1.300 m² de instalaciones deportivas de primer nivel. 4º centro de musculación en 2026.",
+    siteName: "Gorobel Kirol Gunea",
+    locale: "es_ES",
+    images: [
+      {
+        url: "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Instalaciones Gorobel Kirol Gunea en Llodio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nuestros Centros en Llodio y Amurrio | Gorobel Kirol Gunea",
+    description: "Más de 1.300 m² de instalaciones en Llodio y Amurrio. 4 centros en 2026.",
+    images: ["https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg"],
+  },
 };
 
 const faqs: FaqItem[] = [

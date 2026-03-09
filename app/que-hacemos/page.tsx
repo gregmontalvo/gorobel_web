@@ -28,6 +28,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://gorobelgara.com/que-hacemos",
   },
+  openGraph: {
+    type: "website",
+    url: "https://gorobelgara.com/que-hacemos",
+    title: "Disciplinas — CrossTraining, Boxeo, Kickboxing, Jiu Jitsu y OCR | Gorobel",
+    description:
+      "5 disciplinas en Llodio y Amurrio. CrossTraining, Boxeo, Kickboxing, Jiu Jitsu y OCR para todos los niveles. Descubre la tuya.",
+    siteName: "Gorobel Kirol Gunea",
+    locale: "es_ES",
+    images: [
+      {
+        url: "https://gorobelgara.com/wp-content/uploads/2024/03/photo_2024-02-28_23-33-44-1024x768.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Disciplinas en Gorobel Kirol Gunea — CrossTraining, Boxeo, Kickboxing, Jiu Jitsu, OCR",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Disciplinas en Gorobel — CrossTraining, Boxeo, Kickboxing, Jiu Jitsu y OCR",
+    description: "5 disciplinas para todos los niveles en Llodio y Amurrio.",
+    images: ["https://gorobelgara.com/wp-content/uploads/2024/03/photo_2024-02-28_23-33-44-1024x768.jpg"],
+  },
 };
 
 const faqs: FaqItem[] = [

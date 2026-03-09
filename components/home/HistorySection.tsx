@@ -6,8 +6,8 @@ const chapters = [
     year: "2010",
     label: "El origen",
     keyword: "CrossFit en el País Vasco",
-    heading: "Los primeros en traer CrossFit a las Encartaciones.",
-    body: "Cuando el CrossFit era desconocido en España, Joseba y su equipo abrieron en Llodio el que se convertiría en uno de los primeros boxes CrossFit del País Vasco. Sin grandes referencias locales, sin comunidad establecida: solo la convicción de que este método —intenso, funcional y comunitario— transformaría vidas en las Encartaciones. No se equivocaron.",
+    heading: "Los primeros en traer CrossFit a Euskadi.",
+    body: "Cuando el CrossFit era desconocido en España, Joseba y su equipo abrieron en Llodio el que se convertiría en uno de los primeros boxes CrossFit del País Vasco. Sin grandes referencias locales, sin comunidad establecida: solo la convicción de que este método —intenso, funcional y comunitario— transformaría vidas en Euskadi. No se equivocaron.",
   },
   {
     year: "2019",
@@ -26,7 +26,7 @@ export default function HistorySection() {
         <div className="mb-16">
           <p className="section-label !text-[var(--color-sage)]">Nuestra historia</p>
           <h2 className="text-headline font-display text-white max-w-2xl">
-            Más de 15 años siendo referencia en las Encartaciones.
+            Más de 15 años siendo referencia en Euskadi.
           </h2>
         </div>
 

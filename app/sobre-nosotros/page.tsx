@@ -22,6 +22,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://gorobelgara.com/sobre-nosotros",
   },
+  openGraph: {
+    type: "website",
+    url: "https://gorobelgara.com/sobre-nosotros",
+    title: "Sobre Nosotros — Pioneros del CrossFit en el País Vasco | Gorobel",
+    description:
+      "Gorobel Kirol Gunea nació en 2010 como uno de los primeros centros de CrossFit del País Vasco. Conoce nuestra historia, valores y equipo.",
+    siteName: "Gorobel Kirol Gunea",
+    locale: "es_ES",
+    images: [
+      {
+        url: "https://gorobelgara.com/wp-content/uploads/2025/06/Podcast-y-entreno-73.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Comunidad Gorobel Kirol Gunea — CrossFit Llodio desde 2010",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sobre Nosotros — Pioneros del CrossFit en el País Vasco",
+    description: "Desde 2010 en Llodio, pioneros del CrossFit y el Hyrox en Euskadi.",
+    images: ["https://gorobelgara.com/wp-content/uploads/2025/06/Podcast-y-entreno-73.jpg"],
+  },
 };
 
 const milestones = [

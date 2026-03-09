@@ -1,9 +1,19 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
+
+const disciplines = [
+  "CrossTraining",
+  "Boxeo",
+  "Kickboxing",
+  "Jiu Jitsu",
+  "OCR",
+  "Hyrox",
+  "Musculación 2026",
+];
 
 export default function HeroSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -16,7 +26,7 @@ export default function HeroSection() {
   return (
     <section
       ref={scrollRef}
-      className="relative min-h-screen flex items-end lg:items-center overflow-hidden bg-[var(--color-charcoal)]"
+      className="relative min-h-screen flex flex-col overflow-hidden bg-[var(--color-charcoal)]"
     >
       {/* Background image */}
       <div className="absolute inset-0">
@@ -38,7 +48,7 @@ export default function HeroSection() {
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[var(--color-moss)]" />
 
       {/* Content */}
-      <div className="relative z-10 container-wide pb-24 pt-40 lg:py-0 w-full">
+      <div className="relative z-10 container-wide flex-1 flex items-end lg:items-center pb-20 pt-40 lg:py-0 w-full">
         <div className="max-w-3xl">
           {/* Label */}
           <div className="flex items-center gap-3 mb-6 animate-fade-up">
@@ -104,12 +114,33 @@ export default function HeroSection() {
       {/* Scroll indicator */}
       <button
         onClick={scrollToContent}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/40 hover:text-white/70 transition-colors group"
+        className="absolute bottom-[72px] left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/40 hover:text-white/70 transition-colors group"
         aria-label="Scroll hacia abajo"
       >
         <span className="text-xs uppercase tracking-widest">Descubre</span>
         <ChevronDown className="w-5 h-5 animate-bounce" />
       </button>
+
+      {/* Discipline ticker */}
+      <div className="relative z-10 w-full bg-[var(--color-forest)]/90 backdrop-blur-sm border-t border-white/10 overflow-hidden py-3 shrink-0">
+        <div
+          className="flex gap-0 whitespace-nowrap"
+          style={{ animation: "ticker 20s linear infinite" }}
+        >
+          {[...disciplines, ...disciplines, ...disciplines].map((d, i) => (
+            <span key={i} className="inline-flex items-center gap-3 px-6 text-white/80 text-xs font-bold uppercase tracking-[0.2em]">
+              {d}
+              <span className="text-[var(--color-clay)] opacity-60 text-lg leading-none">·</span>
+            </span>
+          ))}
+        </div>
+        <style>{`
+          @keyframes ticker {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-33.333%); }
+          }
+        `}</style>
+      </div>
     </section>
   );
 }

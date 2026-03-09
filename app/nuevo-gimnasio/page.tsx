@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Zap, Star, Shield, TrendingUp } from "lucide-react";
+import { Zap, Star, Shield, TrendingUp, Check, ChevronRight } from "lucide-react";
 import FoundingMemberForm from "@/components/shared/FoundingMemberForm";
 import CountdownClient from "@/components/shared/CountdownClient";
 import FaqSection, { type FaqItem } from "@/components/shared/FaqSection";
@@ -27,28 +27,50 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://gorobelgara.com/nuevo-gimnasio",
   },
+  openGraph: {
+    type: "website",
+    url: "https://gorobelgara.com/nuevo-gimnasio",
+    title: "El mayor gimnasio de las Encartaciones — Founding Members 2026",
+    description: "500 m² · +300.000€ en equipamiento · Llodio, Álava. Reserva tu plaza de Founding Member.",
+    siteName: "Gorobel Kirol Gunea",
+    locale: "es_ES",
+    images: [
+      {
+        url: "https://gorobelgara.com/wp-content/uploads/2024/03/photo_2024-02-28_23-33-44-1024x768.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Nuevo gimnasio musculación Gorobel Llodio 2026",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "El mayor gimnasio de las Encartaciones abre en 2026 — Gorobel",
+    description: "500 m² · +300.000€ en equipamiento · Llodio, Álava.",
+    images: ["https://gorobelgara.com/wp-content/uploads/2024/03/photo_2024-02-28_23-33-44-1024x768.jpg"],
+  },
 };
 
 const perks = [
   {
     icon: Star,
-    title: "Precio Founding Member",
-    body: "Cuota mensual especial reservada exclusivamente para los primeros en inscribirse. Precio fijo para siempre.",
+    title: "Precio bloqueado para siempre",
+    body: "Cuota mensual especial que nunca subirá. Los Founding Members pagan siempre menos que cualquier socio nuevo.",
   },
   {
     icon: Shield,
-    title: "Acceso prioritario",
-    body: "Elige tu horario antes de que la sala abra al público. Los primeros en reservar tendrán las mejores franjas.",
+    title: "Elige tu horario primero",
+    body: "Acceso prioritario para reservar franjas antes de la apertura al público. Los mejores horarios, para los primeros.",
   },
   {
     icon: TrendingUp,
     title: "500 m² de primer nivel",
-    body: "Más de 300.000€ en equipamiento. Zona de peso libre, cardio, funcional y vestuarios de primera categoría.",
+    body: "Más de 300.000€ en equipamiento. Zona de peso libre, cardio premium, funcional y vestuarios de categoría.",
   },
   {
     icon: Zap,
-    title: "Comunidad desde el día 1",
-    body: "Forma parte del grupo fundador de Gorobel Musculación. Los que estuvieron desde el principio.",
+    title: "Eres parte de la historia",
+    body: "El primer grupo de Gorobel Musculación. Los que estuvieron cuando nadie más lo sabía.",
   },
 ];
 
@@ -88,7 +110,7 @@ export default function NuevoGimnasioPage() {
       name: "Apertura Gorobel Musculación — Nuevo Gimnasio Llodio",
       description:
         "Apertura del mayor centro de musculación de las Encartaciones. 500 m² y más de 300.000€ en equipamiento en Llodio, Álava.",
-      startDate: "2026-12-01",
+      startDate: "2026-11-01",
       eventStatus: "https://schema.org/EventScheduled",
       eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
       location: {
@@ -126,156 +148,259 @@ export default function NuevoGimnasioPage() {
         />
       ))}
 
-      {/* Hero */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-[var(--color-charcoal)]">
-        <div className="absolute inset-0">
-          <Image
-            src="https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg"
-            alt="Nuevo gimnasio musculación Gorobel Llodio"
-            fill
-            priority
-            quality={90}
-            className="object-cover object-center"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-charcoal)]/97 via-[var(--color-charcoal)]/80 to-[var(--color-charcoal)]/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-charcoal)]/60 via-transparent to-transparent" />
-          {/* Clay glow */}
-          <div
-            className="absolute inset-0 opacity-15"
-            style={{
-              background:
-                "radial-gradient(ellipse at 30% 60%, var(--color-clay) 0%, transparent 60%)",
-            }}
-          />
-        </div>
+      {/* ─── HERO: dark, countdown-centered ─── */}
+      <section
+        className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #0c1518 0%, #1C2428 50%, #1a1208 100%)" }}
+      >
+        {/* Glow accents */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 70% 50% at 50% 70%, rgba(181,113,74,0.18) 0%, transparent 70%)",
+          }}
+        />
+        <div
+          className="absolute top-0 right-0 w-1/2 h-full pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 80% at 90% 30%, rgba(42,87,65,0.12) 0%, transparent 60%)",
+          }}
+        />
 
-        <div className="relative z-10 container-wide w-full pt-36 pb-24">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-[var(--color-clay)]/20 border border-[var(--color-clay)]/40 text-[var(--color-clay)] text-xs font-bold uppercase tracking-[0.2em] px-4 py-2.5 rounded-full mb-8">
-              <Zap className="w-3.5 h-3.5" fill="currentColor" />
-              Próxima apertura — Llodio 2026
-            </div>
+        {/* Grid texture overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
 
-            <h1 className="text-display font-display text-white mb-6">
-              El gimnasio
-              <span className="block text-[var(--color-clay)]">que faltaba.</span>
-            </h1>
-
-            <p className="text-white/70 text-xl leading-relaxed mb-10 max-w-xl">
-              500 m² y más de 300.000€ en equipamiento. Llodio va a tener la
-              mejor sala de musculación de la zona. Y tú puedes ser el primero.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-16">
-              <a
-                href="#reserva"
-                className="btn-primary bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)] text-base px-8 py-4 justify-center"
-              >
-                Reservar plaza gratuita
-              </a>
-              <a href="#detalles" className="btn-secondary text-base px-8 py-4 justify-center">
-                Ver detalles
-              </a>
-            </div>
-
-            {/* Stats */}
-            <div className="flex flex-wrap gap-10 pt-8 border-t border-white/10">
-              {[
-                { v: "500", u: "m²" },
-                { v: "+300K€", u: "en equipamiento" },
-                { v: "1", u: "solo en Llodio" },
-              ].map(({ v, u }) => (
-                <div key={u}>
-                  <span className="block text-4xl font-display font-black text-white">{v}</span>
-                  <span className="text-white/40 text-sm">{u}</span>
-                </div>
-              ))}
-            </div>
+        <div className="relative z-10 container-wide pt-36 pb-16">
+          {/* Top badge */}
+          <div className="flex items-center gap-3 mb-10">
+            <div className="h-px w-8 bg-[var(--color-clay)]/60" />
+            <span
+              className="text-[var(--color-clay)] text-xs font-bold uppercase tracking-[0.25em]"
+            >
+              Próxima apertura · Llodio · Álava · 2026
+            </span>
           </div>
-        </div>
-      </section>
 
-      {/* Countdown */}
-      <section className="bg-[var(--color-iron)] py-10">
-        <div className="container-wide">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-            <p className="text-white/60 text-sm uppercase tracking-widest font-bold">
-              Apertura prevista
+          {/* Main headline */}
+          <h1 className="font-display font-black text-white leading-[0.92] mb-8"
+            style={{ fontSize: "clamp(3rem, 9vw, 7.5rem)" }}>
+            El mayor
+            <br />
+            <span
+              style={{
+                WebkitTextStroke: "2px rgba(181,113,74,0.9)",
+                color: "transparent",
+              }}
+            >
+              gimnasio
+            </span>
+            <br />
+            <span className="text-white">de la zona.</span>
+          </h1>
+
+          <p className="text-white/50 text-lg max-w-md mb-14 leading-relaxed">
+            500 m² · Más de 300.000€ en equipamiento · Peso libre,
+            cardio de última generación y zona funcional. Solo en Llodio.
+          </p>
+
+          {/* ─── COUNTDOWN ─── */}
+          <div className="mb-14">
+            <p className="text-white/30 text-xs uppercase tracking-[0.2em] mb-6 font-bold">
+              Tiempo para la apertura
             </p>
             <CountdownClient />
-            <p className="text-white/40 text-sm text-center sm:text-right">
-              Finales de 2026 · Llodio, Álava
-            </p>
+          </div>
+
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#reserva"
+              className="inline-flex items-center justify-center gap-2 font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)] text-white"
+            >
+              <Zap className="w-4 h-4" fill="currentColor" />
+              Reservar plaza — es gratis
+            </a>
+            <a
+              href="#detalles"
+              className="inline-flex items-center justify-center gap-2 font-bold text-base px-8 py-4 rounded-xl border border-white/20 text-white/70 hover:border-white/40 hover:text-white transition-all duration-200"
+            >
+              Ver detalles
+              <ChevronRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+
+        {/* Scroll hint */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/20 text-xs tracking-widest uppercase">
+          <div className="w-px h-8 bg-gradient-to-b from-transparent to-white/20" />
+          scroll
+        </div>
+      </section>
+
+      {/* ─── URGENCY BAR ─── */}
+      <section
+        style={{ background: "var(--color-clay)" }}
+        className="py-5"
+      >
+        <div className="container-wide flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-white font-bold text-sm uppercase tracking-widest">
+            Plazas Founding Member — disponibilidad limitada
+          </p>
+          <div className="flex items-center gap-4">
+            {/* Simulated progress bar */}
+            <div className="w-40 h-2 bg-white/20 rounded-full overflow-hidden">
+              <div
+                className="h-full rounded-full bg-white"
+                style={{ width: "42%" }}
+              />
+            </div>
+            <span className="text-white/80 text-sm font-medium whitespace-nowrap">42 plazas reservadas</span>
           </div>
         </div>
       </section>
 
-      {/* Perks */}
-      <section id="detalles" className="section-padding bg-[var(--color-surface)]">
+      {/* ─── PHOTO + FEATURES ─── */}
+      <section id="detalles" className="section-padding bg-[var(--color-charcoal)]">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            {/* Photo */}
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl order-2 lg:order-1">
+              <Image
+                src="https://gorobelgara.com/wp-content/uploads/2024/03/photo_2024-02-28_23-33-44-1024x768.jpg"
+                alt="Entrenamiento Gorobel Kirol Gunea — futuro gimnasio musculación Llodio"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-charcoal)]/70 to-transparent" />
+              {/* Floating tag */}
+              <div className="absolute bottom-6 left-6 right-6">
+                <div
+                  className="inline-flex items-center gap-2 rounded-xl px-4 py-2.5 backdrop-blur-sm"
+                  style={{ background: "rgba(181,113,74,0.85)" }}
+                >
+                  <Star className="w-4 h-4 text-white" fill="white" />
+                  <span className="text-white text-sm font-bold">Founding Member · Precio exclusivo</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="order-1 lg:order-2">
+              <p className="section-label !text-[var(--color-sage)]">Las instalaciones</p>
+              <h2 className="text-headline font-display text-white mb-4">
+                500 m² diseñados para superar límites.
+              </h2>
+              <p className="text-white/50 text-lg leading-relaxed mb-8">
+                Más de 300.000€ invertidos en equipamiento de primera línea. No hay nada
+                igual en las Encartaciones.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {[
+                  "Zona de peso libre completa",
+                  "Más de 20 máquinas premium",
+                  "Cardio de última generación",
+                  "Zona de entrenamiento funcional",
+                  "Vestuarios de primera categoría",
+                  "Zona de recuperación activa",
+                  "Wifi de alta velocidad",
+                  "Parking gratuito",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full bg-[var(--color-clay)]/20 flex items-center justify-center shrink-0">
+                      <Check className="w-3 h-3 text-[var(--color-clay)]" />
+                    </div>
+                    <span className="text-white/65 text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PERKS ─── */}
+      <section className="section-padding bg-[var(--color-surface)]">
         <div className="container-wide">
           <div className="text-center mb-14">
-            <p className="section-label justify-center">Por qué ser Founding Member</p>
+            <p className="section-label justify-center">Por qué reservar ahora</p>
             <h2 className="text-headline font-display text-[var(--color-charcoal)]">
-              Ventajas exclusivas.
+              Lo que solo tienen los Founding Members.
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {perks.map(({ icon: Icon, title, body }) => (
+            {perks.map(({ icon: Icon, title, body }, i) => (
               <div
                 key={title}
-                className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-lg transition-shadow border border-[var(--color-mist)]/30"
+                className="relative rounded-2xl p-7 border transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+                style={{
+                  background: i === 0 ? "var(--color-charcoal)" : "white",
+                  borderColor: i === 0 ? "transparent" : "rgba(176,190,197,0.3)",
+                }}
               >
-                <div className="w-12 h-12 rounded-xl bg-[var(--color-clay)]/10 flex items-center justify-center mb-5">
+                {i === 0 && (
+                  <span className="absolute top-4 right-4 text-[0.6rem] font-bold uppercase tracking-widest text-[var(--color-clay)] bg-[var(--color-clay)]/15 px-2 py-1 rounded-full">
+                    Más popular
+                  </span>
+                )}
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                  style={{
+                    background: i === 0 ? "rgba(181,113,74,0.2)" : "rgba(181,113,74,0.1)",
+                  }}
+                >
                   <Icon className="w-6 h-6 text-[var(--color-clay)]" />
                 </div>
-                <h3 className="font-display font-bold text-[var(--color-charcoal)] mb-2">
+                <h3
+                  className="font-display font-bold mb-2"
+                  style={{ color: i === 0 ? "white" : "var(--color-charcoal)" }}
+                >
                   {title}
                 </h3>
-                <p className="text-[var(--color-steel)] text-sm leading-relaxed">{body}</p>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: i === 0 ? "rgba(255,255,255,0.5)" : "var(--color-steel)" }}
+                >
+                  {body}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* What you'll get */}
-      <section className="section-padding bg-[var(--color-charcoal)]">
-        <div className="container-wide grid lg:grid-cols-2 gap-14 items-center">
-          <div>
-            <p className="section-label !text-[var(--color-sage)]">Las instalaciones</p>
-            <h2 className="text-headline font-display text-white mb-6">
-              500 m² diseñados para tu progreso.
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {[
-                "Zona de peso libre completa",
-                "Más de 20 máquinas premium",
-                "Cardio de última generación",
-                "Sala de entrenamiento funcional",
-                "Vestuarios de primera categoría",
-                "Zona de recuperación activa",
-                "Wifi de alta velocidad",
-                "Parking gratuito",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3 text-white/70 text-sm">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-clay)] shrink-0" />
-                  {item}
-                </div>
-              ))}
-            </div>
+      {/* ─── QUOTE / TRUST ─── */}
+      <section
+        className="py-20"
+        style={{
+          background:
+            "linear-gradient(135deg, var(--color-forest-dark) 0%, var(--color-forest) 100%)",
+        }}
+      >
+        <div className="container-narrow text-center">
+          <div className="text-6xl mb-6" style={{ color: "rgba(255,255,255,0.15)" }}>
+            &ldquo;
           </div>
-          <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
-            <Image
-              src="https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg"
-              alt="Instalaciones Gorobel Musculación"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-charcoal)]/50 to-transparent" />
-            <div className="absolute bottom-5 left-5 bg-[var(--color-clay)] text-white text-sm font-bold px-4 py-2 rounded-lg">
-              Renders / Fotos próximamente
+          <p className="font-display font-black text-white text-2xl lg:text-3xl leading-snug mb-8">
+            Llevamos desde 2010 construyendo la comunidad deportiva más fuerte
+            de las Encartaciones. Este nuevo gimnasio es el siguiente paso.
+          </p>
+          <div className="flex items-center justify-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-display font-black text-white text-sm">
+              G
+            </div>
+            <div className="text-left">
+              <p className="text-white font-bold text-sm">Gorobel Kirol Gunea</p>
+              <p className="text-white/50 text-xs">Pioneros del CrossFit en España desde 2010</p>
             </div>
           </div>
         </div>
@@ -284,23 +409,54 @@ export default function NuevoGimnasioPage() {
       <FaqSection
         heading="Preguntas sobre el nuevo gimnasio"
         faqs={faqs}
-        bg="bg-[var(--color-surface)]"
+        bg="bg-[var(--color-cream)]"
       />
 
-      {/* Form */}
-      <section id="reserva" className="section-padding bg-[var(--color-cream)]">
+      {/* ─── FORM ─── */}
+      <section id="reserva" className="section-padding"
+        style={{ background: "linear-gradient(180deg, #0c1518 0%, #1C2428 100%)" }}
+      >
         <div className="container-narrow">
-          <div className="text-center mb-12">
-            <p className="section-label justify-center">Acceso exclusivo</p>
-            <h2 className="text-headline font-display text-[var(--color-charcoal)]">
-              Reserva tu plaza.
-            </h2>
-            <p className="text-[var(--color-steel)] text-lg mt-4">
-              Sin coste, sin compromiso. Solo nos interesa saber que quieres ser parte de esto.
-            </p>
-          </div>
-          <div className="max-w-lg mx-auto bg-white rounded-3xl shadow-xl p-8 lg:p-10">
-            <FoundingMemberForm />
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left: message */}
+            <div className="lg:pt-4">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="h-px w-6 bg-[var(--color-clay)]/60" />
+                <span className="text-[var(--color-clay)] text-xs font-bold uppercase tracking-[0.2em]">
+                  Plazas limitadas
+                </span>
+              </div>
+              <h2 className="font-display font-black text-white text-4xl lg:text-5xl leading-tight mb-6">
+                Reserva tu plaza.
+                <br />
+                <span style={{ color: "var(--color-clay)" }}>Sin coste.</span>
+              </h2>
+              <p className="text-white/50 text-lg leading-relaxed mb-8">
+                Sin permanencia, sin pago inicial. Solo queremos saber que
+                quieres ser parte de esto desde el primer día.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Precio mensual especial — bloqueado para siempre",
+                  "Acceso prioritario para elegir tu horario",
+                  "Forma parte del grupo Founding Member",
+                  "Sin compromisos hasta la apertura",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-[var(--color-clay)] shrink-0 mt-0.5" />
+                    <span className="text-white/65 text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right: form */}
+            <div
+              className="rounded-3xl p-8 lg:p-10"
+              style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
+            >
+              <FoundingMemberForm />
+            </div>
           </div>
         </div>
       </section>

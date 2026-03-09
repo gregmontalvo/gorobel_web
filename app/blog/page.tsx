@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, ArrowRight, Clock } from "lucide-react";
+import { blogPosts } from "@/lib/data/blog";
 
 export const metadata: Metadata = {
   title: "Blog — Consejos de entrenamiento y salud en Llodio y Amurrio",
@@ -14,70 +15,45 @@ export const metadata: Metadata = {
     "sala musculacion llodio 2026",
     "crossfit principiantes",
   ],
+  alternates: {
+    canonical: "https://gorobelgara.com/blog",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://gorobelgara.com/blog",
+    title: "Blog de Gorobel — Entrenamiento, salud y comunidad en las Encartaciones",
+    description:
+      "Artículos de CrossTraining, nutrición, salud mental y más desde Gorobel Kirol Gunea en Llodio y Amurrio.",
+    siteName: "Gorobel Kirol Gunea",
+    locale: "es_ES",
+    images: [
+      {
+        url: "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Blog Gorobel Kirol Gunea — Entrenamiento y salud en Llodio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog Gorobel — Entrenamiento y salud en las Encartaciones",
+    description: "Guías, consejos y artículos de entrenamiento desde Llodio y Amurrio.",
+    images: ["https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg"],
+  },
 };
 
-const posts = [
-  {
-    id: "sala-musculacion-llodio-2026",
-    title: "Por qué Llodio necesitaba una sala de musculación de verdad",
-    excerpt:
-      "En mayo de 2026 abriremos el mayor centro de musculación de las Encartaciones. Te contamos qué hay detrás de esta decisión y qué va a suponer para la zona.",
-    category: "Instalaciones",
-    date: "2026-02-15",
-    readTime: "4 min",
-    image: "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg",
-    slug: "/blog/sala-musculacion-llodio-2026",
-    featured: true,
-  },
-  {
-    id: "crossfit-principiantes-amurrio",
-    title: "CrossTraining para principiantes en Amurrio: lo que nadie te cuenta",
-    excerpt:
-      "Si nunca has hecho CrossTraining y vives en Amurrio, este artículo es para ti. Sin mitos, sin miedo. Solo la verdad sobre cómo empezar bien.",
-    category: "Guías",
-    date: "2026-01-28",
-    readTime: "6 min",
-    image: "https://gorobelgara.com/wp-content/uploads/2024/03/photo_2024-02-28_23-33-44-1024x768.jpg",
-    slug: "/blog/crossfit-principiantes-amurrio",
-    featured: false,
-  },
-  {
-    id: "mejor-gimnasio-llodio",
-    title: "¿Cuál es el mejor gimnasio para perder peso en Llodio?",
-    excerpt:
-      "Guía honesta para elegir el gimnasio en Llodio que mejor se adapta a tu objetivo. Comparamos opciones y te damos claves para tomar la decisión correcta.",
-    category: "Guías",
-    date: "2026-01-12",
-    readTime: "5 min",
-    image: "https://gorobelgara.com/wp-content/uploads/2025/06/Entreno-49.jpg",
-    slug: "/blog/mejor-gimnasio-llodio",
-    featured: false,
-  },
-  {
-    id: "kickboxing-beneficios",
-    title: "5 razones por las que el Kickboxing te cambiará la vida",
-    excerpt:
-      "Más allá del golpe: el Kickboxing mejora tu cardiovascular, reduce el estrés, aumenta la confianza y crea una disciplina mental que trasciende el gym.",
-    category: "Disciplinas",
-    date: "2025-12-20",
-    readTime: "4 min",
-    image: "https://gorobelgara.com/wp-content/uploads/2024/04/3.png",
-    slug: "/blog/kickboxing-beneficios",
-    featured: false,
-  },
-  {
-    id: "crossfit-open-2026-llodio",
-    title: "CrossFit Open 2026 en Gorobel: cómo prepararte y qué esperar",
-    excerpt:
-      "El CrossFit Open es la competición más grande del mundo. Te explicamos cómo prepararte desde Llodio y por qué participar aunque seas principiante.",
-    category: "Competición",
-    date: "2025-12-08",
-    readTime: "7 min",
-    image: "https://gorobelgara.com/wp-content/uploads/2025/06/Podcast-y-entreno-73.jpg",
-    slug: "/blog/crossfit-open-2026-llodio",
-    featured: false,
-  },
-];
+const posts = blogPosts.map((p) => ({
+  id: p.slug,
+  title: p.title,
+  excerpt: p.excerpt,
+  category: p.category,
+  date: p.date,
+  readTime: p.readTime,
+  image: p.image,
+  slug: `/blog/${p.slug}`,
+  featured: p.featured,
+}));
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });

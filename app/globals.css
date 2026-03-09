@@ -322,3 +322,113 @@ body {
   pointer-events: none;
   mix-blend-mode: overlay;
 }
+
+/* === GLASS CARD === */
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* === GRADIENT TEXT === */
+.text-gradient-white {
+  background: linear-gradient(135deg, #ffffff 0%, var(--color-sage) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === BADGE === */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+}
+
+.badge-forest {
+  background-color: rgba(42, 87, 65, 0.12);
+  color: var(--color-forest);
+}
+
+.badge-clay {
+  background-color: var(--color-clay);
+  color: white;
+}
+
+.badge-dark {
+  background-color: rgba(28, 36, 40, 0.7);
+  backdrop-filter: blur(6px);
+  color: white;
+}
+
+/* === DIAGONAL DIVIDER === */
+.diagonal-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.diagonal-top {
+  clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* === PROSE CONTENT (legal pages, long-form) === */
+.prose-content h2 {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-charcoal);
+  margin-top: 2.5rem;
+  margin-bottom: 0.625rem;
+}
+.prose-content h3 {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  color: var(--color-charcoal);
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.prose-content p {
+  color: var(--color-steel);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+.prose-content ul {
+  margin-bottom: 1.25rem;
+  padding-left: 0;
+  list-style: none;
+}
+.prose-content ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--color-steel);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 0.375rem;
+}
+.prose-content ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-clay);
+  font-weight: 600;
+}
+.prose-content a {
+  color: var(--color-forest);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-content a:hover {
+  color: var(--color-moss);
+}
+.prose-content strong {
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
