@@ -36,19 +36,19 @@ export default function Header() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           isScrolled
-            ? "bg-[var(--color-charcoal)]/98 backdrop-blur-md shadow-lg py-3"
-            : "bg-transparent py-5"
+            ? "bg-[var(--color-charcoal)]/98 backdrop-blur-md shadow-lg py-2"
+            : "bg-transparent py-2"
         )}
       >
         <div className="container-wide flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-2 group">
             <Image
               src="https://gorobelgara.com/wp-content/uploads/2023/02/icono-sin-fondo-300x300.png"
               alt="Gorobel Kirol Gunea"
-              width={44}
-              height={44}
-              className="w-10 h-10 object-contain brightness-0 invert"
+              width={56}
+              height={56}
+              className="w-14 h-14 object-contain brightness-0 invert"
             />
             <span className="font-display font-800 text-white text-lg tracking-tight">
               <span className="font-black">Gorobel</span>

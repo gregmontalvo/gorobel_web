@@ -49,7 +49,7 @@ export default function NewGymTeaser() {
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg"
+          src="https://gorobelgara.com/wp-content/uploads/2025/06/Entreno-49.jpg"
           alt="Nuevo gimnasio de musculación Gorobel Llodio"
           fill
           className="object-cover object-center"
