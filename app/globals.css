@@ -1,26 +1,324 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* === GOROBEL BRAND COLORS === */
+  /* Primary: Forest Green palette */
+  --color-forest:      #2A5741;
+  --color-forest-dark: #1E3F2F;
+  --color-moss:        #4A7C59;
+  --color-sage:        #8BB19E;
+  --color-sage-light:  #C2D8CE;
+
+  /* Neutrals: Dark steel grays */
+  --color-charcoal:    #1C2428;
+  --color-iron:        #2E3C42;
+  --color-steel:       #455A64;
+  --color-stone:       #78909C;
+  --color-mist:        #B0BEC5;
+
+  /* Accent: Earth / Terra Cotta */
+  --color-clay:        #B5714A;
+  --color-clay-light:  #D4956E;
+  --color-sand:        #D4B08C;
+  --color-sand-light:  #EDD9BF;
+
+  /* Base */
+  --color-cream:       #F5F1EB;
+  --color-surface:     #FAFAF8;
+  --color-white:       #FFFFFF;
+
+  /* Typography */
+  --font-display: var(--font-montserrat);
+  --font-sans:    var(--font-inter);
+
+  /* Animation */
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* === BASE STYLES === */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-charcoal);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* === TYPOGRAPHY UTILITIES === */
+.font-display {
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+}
+
+/* Fluid typography */
+.text-display {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 900;
+}
+
+.text-headline {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.text-title {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-cream); }
+::-webkit-scrollbar-thumb { background: var(--color-moss); border-radius: 3px; }
+
+/* === SELECTION === */
+::selection {
+  background-color: var(--color-moss);
+  color: var(--color-white);
+}
+
+/* === FOCUS === */
+:focus-visible {
+  outline: 2px solid var(--color-moss);
+  outline-offset: 3px;
+}
+
+/* === ANIMATIONS === */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-right {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes count-up {
+  from { transform: translateY(10px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.animate-fade-up   { animation: fade-up   0.6s var(--ease-smooth) both; }
+.animate-fade-in   { animation: fade-in   0.5s ease both; }
+.animate-slide-right { animation: slide-right 0.7s var(--ease-smooth) both; }
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+
+/* === CUSTOM COMPONENTS === */
+.section-padding {
+  padding-top: clamp(4rem, 8vw, 7rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.container-wide {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 4rem);
+}
+
+.container-narrow {
+  max-width: 900px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 4rem);
+}
+
+/* === GRADIENT OVERLAYS === */
+.gradient-forest {
+  background: linear-gradient(135deg, var(--color-forest-dark) 0%, var(--color-moss) 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-iron) 100%);
+}
+
+.overlay-dark {
+  background: linear-gradient(
+    to bottom,
+    rgba(28, 36, 40, 0.1) 0%,
+    rgba(28, 36, 40, 0.65) 60%,
+    rgba(28, 36, 40, 0.9) 100%
+  );
+}
+
+.overlay-split {
+  background: linear-gradient(
+    to right,
+    rgba(28, 36, 40, 0.92) 0%,
+    rgba(28, 36, 40, 0.7) 50%,
+    rgba(28, 36, 40, 0.0) 100%
+  );
+}
+
+/* === CARD STYLES === */
+.card-hover {
+  transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(28, 36, 40, 0.15);
+}
+
+/* === BUTTON STYLES === */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-forest);
+  color: var(--color-white);
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: var(--color-moss);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--color-white);
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 2px solid rgba(255,255,255,0.5);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  border-color: var(--color-white);
+  background-color: rgba(255,255,255,0.1);
+}
+
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--color-forest);
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 2px solid var(--color-forest);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-outline-dark:hover {
+  background-color: var(--color-forest);
+  color: var(--color-white);
+}
+
+/* === SECTION LABEL === */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-moss);
+  margin-bottom: 1rem;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background-color: var(--color-clay);
+}
+
+/* === IMAGE EFFECTS === */
+.img-zoom {
+  transition: transform 0.7s var(--ease-smooth);
+  will-change: transform;
+}
+.img-zoom:hover {
+  transform: scale(1.04);
+}
+
+/* === FORM STYLES === */
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-mist);
+  border-radius: 0.5rem;
+  color: var(--color-charcoal);
+  font-size: 0.9375rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+.form-input:focus {
+  border-color: var(--color-moss);
+  box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.15);
+}
+.form-input::placeholder {
+  color: var(--color-stone);
+}
+
+/* === COUNTDOWN === */
+.countdown-digit {
+  font-family: var(--font-montserrat);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1;
+  color: var(--color-white);
+}
+
+/* === NOISE TEXTURE === */
+.bg-noise {
+  position: relative;
+}
+.bg-noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  mix-blend-mode: overlay;
 }
