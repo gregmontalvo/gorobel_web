@@ -1,30 +1,30 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* === GOROBEL BRAND COLORS === */
-  /* Primary: Forest Green palette */
-  --color-forest:      #2A5741;
-  --color-forest-dark: #1E3F2F;
-  --color-moss:        #4A7C59;
-  --color-sage:        #8BB19E;
-  --color-sage-light:  #C2D8CE;
+  /* === GOROBEL BRAND COLORS — Pantone Corporativo 2026 === */
+  /* Primary: Verde bosque profundo (Pantone 5605 U) */
+  --color-forest:      #2E4D34;
+  --color-forest-dark: #1F3826;
+  --color-moss:        #4A6B50;
+  --color-sage:        #8E9B64;   /* Verde safari/oliva — Pantone 5773 U */
+  --color-sage-light:  #ABB58C;
 
-  /* Neutrals: Dark steel grays */
-  --color-charcoal:    #1C2428;
-  --color-iron:        #2E3C42;
-  --color-steel:       #455A64;
-  --color-stone:       #78909C;
-  --color-mist:        #B0BEC5;
+  /* Neutrals: Negro carbón (Pantone Black U) + Gris granito (Pantone 432 U) */
+  --color-charcoal:    #111111;
+  --color-iron:        #1C1C1C;
+  --color-steel:       #4D4D4D;
+  --color-stone:       #737373;
+  --color-mist:        #A3A3A3;
 
-  /* Accent: Earth / Terra Cotta */
-  --color-clay:        #B5714A;
-  --color-clay-light:  #D4956E;
-  --color-sand:        #D4B08C;
-  --color-sand-light:  #EDD9BF;
+  /* Accent: Beige rocoso (Pantone 468 U) */
+  --color-clay:        #CFC5A3;
+  --color-clay-light:  #DDD5B8;
+  --color-sand:        #E0D9C3;
+  --color-sand-light:  #EBE5D4;
 
   /* Base */
-  --color-cream:       #F5F1EB;
-  --color-surface:     #FAFAF8;
+  --color-cream:       #F0EBE0;
+  --color-surface:     #F8F6F1;
   --color-white:       #FFFFFF;
 
   /* Typography */
@@ -161,18 +161,18 @@ body {
 .overlay-dark {
   background: linear-gradient(
     to bottom,
-    rgba(28, 36, 40, 0.1) 0%,
-    rgba(28, 36, 40, 0.65) 60%,
-    rgba(28, 36, 40, 0.9) 100%
+    rgba(17, 17, 17, 0.1) 0%,
+    rgba(17, 17, 17, 0.65) 60%,
+    rgba(17, 17, 17, 0.9) 100%
   );
 }
 
 .overlay-split {
   background: linear-gradient(
     to right,
-    rgba(28, 36, 40, 0.92) 0%,
-    rgba(28, 36, 40, 0.7) 50%,
-    rgba(28, 36, 40, 0.0) 100%
+    rgba(17, 17, 17, 0.92) 0%,
+    rgba(17, 17, 17, 0.7) 50%,
+    rgba(17, 17, 17, 0.0) 100%
   );
 }
 
@@ -182,7 +182,7 @@ body {
 }
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(28, 36, 40, 0.15);
+  box-shadow: 0 20px 60px rgba(17, 17, 17, 0.15);
 }
 
 /* === BUTTON STYLES === */
@@ -295,7 +295,7 @@ body {
 }
 .form-input:focus {
   border-color: var(--color-moss);
-  box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.15);
+  box-shadow: 0 0 0 3px rgba(74, 107, 80, 0.15);
 }
 .form-input::placeholder {
   color: var(--color-stone);
@@ -353,17 +353,17 @@ body {
 }
 
 .badge-forest {
-  background-color: rgba(42, 87, 65, 0.12);
+  background-color: rgba(46, 77, 52, 0.12);
   color: var(--color-forest);
 }
 
 .badge-clay {
   background-color: var(--color-clay);
-  color: white;
+  color: var(--color-charcoal);
 }
 
 .badge-dark {
-  background-color: rgba(28, 36, 40, 0.7);
+  background-color: rgba(17, 17, 17, 0.7);
   backdrop-filter: blur(6px);
   color: white;
 }

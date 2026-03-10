@@ -84,7 +84,7 @@ export default function Header() {
 
             <Link
               href="/nuevo-gimnasio"
-              className="hidden sm:inline-flex items-center gap-2 bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)] text-white text-sm font-bold uppercase tracking-wide px-4 py-2.5 rounded-lg transition-colors duration-200"
+              className="hidden sm:inline-flex items-center gap-2 bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)] text-[var(--color-charcoal)] text-sm font-bold uppercase tracking-wide px-4 py-2.5 rounded-lg transition-colors duration-200"
             >
               Nuevo Gimnasio
             </Link>

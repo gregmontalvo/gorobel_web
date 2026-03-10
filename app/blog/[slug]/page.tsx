@@ -210,7 +210,7 @@ export default async function BlogPostPage({
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-charcoal)] via-[var(--color-charcoal)]/50 to-[var(--color-charcoal)]/10" />
         <div className="relative z-10 container-wide pb-12 pt-24">
           {/* Category badge */}
-          <span className="inline-flex items-center gap-1.5 bg-[var(--color-clay)] text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg mb-4">
+          <span className="inline-flex items-center gap-1.5 bg-[var(--color-clay)] text-[var(--color-charcoal)] text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg mb-4">
             <Tag className="w-3 h-3" />
             {post.category}
           </span>
@@ -293,7 +293,7 @@ export default async function BlogPostPage({
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <span className="absolute top-3 left-3 bg-[var(--color-clay)] text-white text-xs font-bold px-2.5 py-1 rounded-md">
+                    <span className="absolute top-3 left-3 bg-[var(--color-clay)] text-[var(--color-charcoal)] text-xs font-bold px-2.5 py-1 rounded-md">
                       {relPost.category}
                     </span>
                   </div>

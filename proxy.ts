@@ -10,7 +10,7 @@ function hexToBytes(hex: string): Uint8Array {
   return bytes;
 }
 
-async function verifyTokenEdge(token: string, secret: string): Promise<string | null> {
+async function verifyToken(token: string, secret: string): Promise<string | null> {
   const lastDot = token.lastIndexOf(".");
   if (lastDot === -1) return null;
   const payload = token.slice(0, lastDot);
@@ -33,7 +33,7 @@ async function verifyTokenEdge(token: string, secret: string): Promise<string | 
   }
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const isAdminRoute = pathname.startsWith("/admin");
@@ -43,7 +43,7 @@ export async function middleware(request: NextRequest) {
   if ((isAdminRoute && !isLoginPage) || isAdminApi) {
     const secret = process.env.ADMIN_SECRET ?? "";
     const token = request.cookies.get(COOKIE_NAME)?.value;
-    const payload = token ? await verifyTokenEdge(token, secret) : null;
+    const payload = token ? await verifyToken(token, secret) : null;
 
     if (payload !== "admin") {
       if (isAdminApi) {

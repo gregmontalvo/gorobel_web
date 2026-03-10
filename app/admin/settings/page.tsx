@@ -99,7 +99,7 @@ export default function SettingsPage() {
         {/* Anuncio */}
         <section className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 space-y-3">
           <h2 className="font-display font-semibold text-[var(--color-charcoal)] flex items-center gap-2">
-            <Megaphone className="w-4 h-4 text-[var(--color-clay)]" /> Mensaje de anuncio
+            <Megaphone className="w-4 h-4 text-[var(--color-sage)]" /> Mensaje de anuncio
           </h2>
           <p className="text-xs text-[var(--color-stone)]">
             Deja en blanco para no mostrar ningún anuncio.
@@ -145,7 +145,7 @@ export default function SettingsPage() {
         {/* Precios */}
         <section className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 space-y-4">
           <h2 className="font-display font-semibold text-[var(--color-charcoal)] flex items-center gap-2">
-            <Tag className="w-4 h-4 text-[var(--color-clay)]" /> Precios
+            <Tag className="w-4 h-4 text-[var(--color-sage)]" /> Precios
           </h2>
           <div className="space-y-3">
             {PRICING_KEYS.map((plan) => (

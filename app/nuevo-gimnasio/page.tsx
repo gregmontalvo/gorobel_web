@@ -151,21 +151,21 @@ export default function NuevoGimnasioPage() {
       {/* ─── HERO: dark, countdown-centered ─── */}
       <section
         className="relative min-h-screen flex flex-col justify-center overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #0c1518 0%, #1C2428 50%, #1a1208 100%)" }}
+        style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #14120c 100%)" }}
       >
         {/* Glow accents */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 70% 50% at 50% 70%, rgba(181,113,74,0.18) 0%, transparent 70%)",
+              "radial-gradient(ellipse 70% 50% at 50% 70%, rgba(207,197,163,0.18) 0%, transparent 70%)",
           }}
         />
         <div
           className="absolute top-0 right-0 w-1/2 h-full pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 60% 80% at 90% 30%, rgba(42,87,65,0.12) 0%, transparent 60%)",
+              "radial-gradient(ellipse 60% 80% at 90% 30%, rgba(46,77,52,0.12) 0%, transparent 60%)",
           }}
         />
 
@@ -197,7 +197,7 @@ export default function NuevoGimnasioPage() {
             <br />
             <span
               style={{
-                WebkitTextStroke: "2px rgba(181,113,74,0.9)",
+                WebkitTextStroke: "2px rgba(207,197,163,0.9)",
                 color: "transparent",
               }}
             >
@@ -224,7 +224,7 @@ export default function NuevoGimnasioPage() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#reserva"
-              className="inline-flex items-center justify-center gap-2 font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)] text-white"
+              className="inline-flex items-center justify-center gap-2 font-bold text-base px-8 py-4 rounded-xl transition-all duration-200 bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)] text-[var(--color-charcoal)]"
             >
               <Zap className="w-4 h-4" fill="currentColor" />
               Reservar plaza — es gratis
@@ -252,18 +252,18 @@ export default function NuevoGimnasioPage() {
         className="py-5"
       >
         <div className="container-wide flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white font-bold text-sm uppercase tracking-widest">
+          <p className="text-[var(--color-charcoal)] font-bold text-sm uppercase tracking-widest">
             Plazas Founding Member — disponibilidad limitada
           </p>
           <div className="flex items-center gap-4">
             {/* Simulated progress bar */}
-            <div className="w-40 h-2 bg-white/20 rounded-full overflow-hidden">
+            <div className="w-40 h-2 bg-[var(--color-charcoal)]/20 rounded-full overflow-hidden">
               <div
-                className="h-full rounded-full bg-white"
+                className="h-full rounded-full bg-[var(--color-charcoal)]"
                 style={{ width: "42%" }}
               />
             </div>
-            <span className="text-white/80 text-sm font-medium whitespace-nowrap">42 plazas reservadas</span>
+            <span className="text-[var(--color-charcoal)]/80 text-sm font-medium whitespace-nowrap">42 plazas reservadas</span>
           </div>
         </div>
       </section>
@@ -286,10 +286,10 @@ export default function NuevoGimnasioPage() {
               <div className="absolute bottom-6 left-6 right-6">
                 <div
                   className="inline-flex items-center gap-2 rounded-xl px-4 py-2.5 backdrop-blur-sm"
-                  style={{ background: "rgba(181,113,74,0.85)" }}
+                  style={{ background: "rgba(207,197,163,0.9)" }}
                 >
-                  <Star className="w-4 h-4 text-white" fill="white" />
-                  <span className="text-white text-sm font-bold">Founding Member · Precio exclusivo</span>
+                  <Star className="w-4 h-4 text-[var(--color-charcoal)]" fill="currentColor" />
+                  <span className="text-[var(--color-charcoal)] text-sm font-bold">Founding Member · Precio exclusivo</span>
                 </div>
               </div>
             </div>
@@ -344,7 +344,7 @@ export default function NuevoGimnasioPage() {
                 className="relative rounded-2xl p-7 border transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
                 style={{
                   background: i === 0 ? "var(--color-charcoal)" : "white",
-                  borderColor: i === 0 ? "transparent" : "rgba(176,190,197,0.3)",
+                  borderColor: i === 0 ? "transparent" : "rgba(163,163,163,0.3)",
                 }}
               >
                 {i === 0 && (
@@ -355,7 +355,7 @@ export default function NuevoGimnasioPage() {
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
                   style={{
-                    background: i === 0 ? "rgba(181,113,74,0.2)" : "rgba(181,113,74,0.1)",
+                    background: i === 0 ? "rgba(207,197,163,0.2)" : "rgba(207,197,163,0.1)",
                   }}
                 >
                   <Icon className="w-6 h-6 text-[var(--color-clay)]" />
@@ -414,7 +414,7 @@ export default function NuevoGimnasioPage() {
 
       {/* ─── FORM ─── */}
       <section id="reserva" className="section-padding"
-        style={{ background: "linear-gradient(180deg, #0c1518 0%, #1C2428 100%)" }}
+        style={{ background: "linear-gradient(180deg, #0a0a0a 0%, #111111 100%)" }}
       >
         <div className="container-narrow">
           <div className="grid lg:grid-cols-2 gap-12 items-start">

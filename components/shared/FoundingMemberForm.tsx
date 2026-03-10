@@ -122,7 +122,7 @@ export default function FoundingMemberForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="btn-primary w-full justify-center text-base py-4 mt-2 bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)] disabled:opacity-60 disabled:cursor-not-allowed"
+        className="btn-primary w-full justify-center text-base py-4 mt-2 bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)] !text-[var(--color-charcoal)] disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {isSubmitting ? (
           <>

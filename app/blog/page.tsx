@@ -94,7 +94,7 @@ export default function BlogPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[var(--color-charcoal)]/40" />
-              <span className="absolute top-5 left-5 bg-[var(--color-clay)] text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg">
+              <span className="absolute top-5 left-5 bg-[var(--color-clay)] text-[var(--color-charcoal)] text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg">
                 Destacado
               </span>
             </div>

@@ -29,8 +29,8 @@ export default async function DashboardPage() {
       label: "Miembros fundadores",
       value: stats.leads.founders,
       icon: UserCheck,
-      color: "text-[var(--color-clay)]",
-      bg: "bg-[var(--color-clay)]/10",
+      color: "text-[var(--color-sage)]",
+      bg: "bg-[var(--color-sage)]/10",
     },
     {
       label: "Entradas en KB",
@@ -95,7 +95,7 @@ export default async function DashboardPage() {
                   <span
                     className={`text-xs px-2 py-1 rounded-full font-medium ${
                       lead.type === "Fundador"
-                        ? "bg-[var(--color-clay)]/10 text-[var(--color-clay)]"
+                        ? "bg-[var(--color-sage)]/10 text-[var(--color-sage)]"
                         : "bg-[var(--color-forest)]/10 text-[var(--color-forest)]"
                     }`}
                   >

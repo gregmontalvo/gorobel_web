@@ -99,7 +99,7 @@ export default function NewGymTeaser() {
               </ul>
 
               <div className="flex flex-wrap gap-3">
-                <Link href="/nuevo-gimnasio" className="btn-primary bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)]">
+                <Link href="/nuevo-gimnasio" className="btn-primary bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)] !text-[var(--color-charcoal)]">
                   Quiero ser Founding Member
                   <ArrowRight className="w-4 h-4" />
                 </Link>

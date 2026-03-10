@@ -182,7 +182,7 @@ export default function ContactoPage() {
             {locations.map((loc) => (
               <div key={loc.name} className="bg-white rounded-2xl p-6 shadow-sm">
                 <div className="flex items-start gap-3 mb-3">
-                  <MapPin className="w-5 h-5 text-[var(--color-clay)] shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-[var(--color-sage)] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-display font-bold text-[var(--color-charcoal)]">
                       {loc.name}

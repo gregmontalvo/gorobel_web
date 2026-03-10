@@ -103,7 +103,7 @@ export default function CentersPreview() {
         {/* Coming soon card */}
         <div className="mt-5 bg-gradient-to-r from-[var(--color-forest-dark)] to-[var(--color-forest)] rounded-2xl p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
           <div>
-            <span className="inline-block bg-[var(--color-clay)] text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg mb-4">
+            <span className="inline-block bg-[var(--color-clay)] text-[var(--color-charcoal)] text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg mb-4">
               Próxima apertura 2026
             </span>
             <h3 className="font-display font-bold text-white text-2xl lg:text-3xl mb-2">
@@ -116,7 +116,7 @@ export default function CentersPreview() {
           </div>
           <Link
             href="/nuevo-gimnasio"
-            className="btn-primary shrink-0 bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)]"
+            className="btn-primary shrink-0 bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)] !text-[var(--color-charcoal)]"
           >
             Founding Member
             <ArrowRight className="w-4 h-4" />

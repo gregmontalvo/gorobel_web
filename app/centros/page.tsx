@@ -210,18 +210,18 @@ export default function CentrosPage() {
                     href={`tel:${center.phone.replace(/\s/g, "")}`}
                     className="flex items-center gap-3 text-[var(--color-steel)] hover:text-[var(--color-forest)] text-sm transition-colors"
                   >
-                    <Phone className="w-4 h-4 text-[var(--color-clay)]" />
+                    <Phone className="w-4 h-4 text-[var(--color-sage)]" />
                     {center.phone}
                   </a>
                   <a
                     href={`mailto:${center.email}`}
                     className="flex items-center gap-3 text-[var(--color-steel)] hover:text-[var(--color-forest)] text-sm transition-colors"
                   >
-                    <Mail className="w-4 h-4 text-[var(--color-clay)]" />
+                    <Mail className="w-4 h-4 text-[var(--color-sage)]" />
                     {center.email}
                   </a>
                   <p className="flex items-start gap-3 text-[var(--color-steel)] text-sm">
-                    <MapPin className="w-4 h-4 text-[var(--color-clay)] shrink-0 mt-0.5" />
+                    <MapPin className="w-4 h-4 text-[var(--color-sage)] shrink-0 mt-0.5" />
                     {center.address}
                   </p>
                 </div>
@@ -260,7 +260,7 @@ export default function CentrosPage() {
             500 m² de sala de musculación con más de 300.000€ en equipamiento.
             El centro que Euskadi necesita.
           </p>
-          <Link href="/nuevo-gimnasio" className="btn-primary bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)]">
+          <Link href="/nuevo-gimnasio" className="btn-primary bg-[var(--color-clay)] hover:bg-[var(--color-clay-light)] !text-[var(--color-charcoal)]">
             Founding Members →
           </Link>
         </div>

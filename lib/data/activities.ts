@@ -25,7 +25,7 @@ export const activities: Activity[] = [
     image:
       "https://gorobelgara.com/wp-content/uploads/2024/03/photo_2024-02-28_23-33-44-1024x768.jpg",
     imageAlt: "Atletas practicando CrossTraining en Gorobel Llodio",
-    color: "#2A5741",
+    color: "#2E4D34",
   },
   {
     id: "boxeo",
@@ -41,7 +41,7 @@ export const activities: Activity[] = [
     ],
     image: "https://gorobelgara.com/wp-content/uploads/2024/04/2.png",
     imageAlt: "Dos personas entrenando boxeo en Gorobel Llodio",
-    color: "#B5714A",
+    color: "#8E9B64",
   },
   {
     id: "kickboxing",
@@ -57,7 +57,7 @@ export const activities: Activity[] = [
     ],
     image: "https://gorobelgara.com/wp-content/uploads/2024/04/3.png",
     imageAlt: "Combate de Kickboxing en Gorobel",
-    color: "#4A7C59",
+    color: "#4A6B50",
   },
   {
     id: "jiujitsu",
@@ -74,7 +74,7 @@ export const activities: Activity[] = [
     image:
       "https://gorobelgara.com/wp-content/uploads/2024/04/photo_2024-04-01_23-32-22.jpg",
     imageAlt: "Técnica de Jiu Jitsu en Gorobel",
-    color: "#2E3C42",
+    color: "#1C1C1C",
   },
   {
     id: "ocr",
@@ -91,6 +91,6 @@ export const activities: Activity[] = [
     image:
       "https://gorobelgara.com/wp-content/uploads/2025/06/Podcast-y-entreno-73.jpg",
     imageAlt: "Entrenamiento OCR en Gorobel",
-    color: "#4A5568",
+    color: "#4D4D4D",
   },
 ];
