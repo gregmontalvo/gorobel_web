@@ -3,6 +3,33 @@
 Sitio web oficial de Gorobel Kirol Gunea, club deportivo en Llodio y Amurrio (País Vasco).
 Marketing site + chatbot IA + panel de administración para el cliente.
 
+## 🔴 Antes de tocar nada — cliente, marca y estado
+
+- **Cliente**: Gorobel (cuenta Badgie `e2c2df9b-6ace-4b67-884b-a1d7acf36a5a`). El interlocutor es **Joseba**.
+  Web ya facturada. Tarjeta de trabajo: tablero Development ref 1518. Notas y transcript de la última
+  llamada: repo `badgie`, `tasks/clientes/gorobel/reunion-2026-09-17-*`.
+- **Nunca «CrossFit»** en copy, metadatos, schema, alt ni slugs. Gorobel dejó la licencia y CrossFit LLC
+  ya requirió a Badgie por uso de la marca. El club se presenta como **centro de entrenamiento integral**:
+  entrenamiento funcional, deportes de contacto, programa para mayores de 55, barré y musculación en el
+  nuevo centro de Llodio. «La palabra fuerza es la clave» (Joseba): lo que la gente busca es ganar fuerza.
+  «Hyrox» también es marca registrada: revisar su uso con el mismo criterio.
+- **Dos centros con objetivos distintos**: en uno hay mucha competencia (que se sepa todo lo que ofrece),
+  en el otro ninguna (afianzarse antes de que llegue).
+- **Preproducción**: https://gorobel-web.vercel.app (Vercel, equipo `teasers`, proyecto `gorobel-web`;
+  cada push a `main` despliega ahí). Es indexable; el canonical apunta a gorobelgara.com.
+- **El proyecto de Vercel no tiene variables de entorno**: chatbot, Vercel KV (leads y ajustes) y panel
+  admin no funcionan en la preproducción. El formulario de contacto guarda solo en KV y no avisa a nadie:
+  antes de lanzar hay que decidir a dónde llega un lead.
+- **Migración de hosting**: la web actual (www.gorobelgara.com) es WordPress + WPML, con páginas en
+  castellano y euskera, alojada en AFX Solutions. Su formulario sigue recibiendo contactos. Las imágenes de
+  esta web se sirven desde `gorobelgara.com/wp-content/uploads`: hay que traerlas antes de cambiar el DNS o
+  se rompen al dar de baja el WordPress. El cambio va por DNS con la web antigua en paralelo 1-4 semanas,
+  con redirecciones 301 de sus URLs.
+- **Paleta confirmada por Joseba** (aplicada en `app/globals.css`): #111111 · #4D4D4D · #2E4D34 ·
+  #8E9B64 · #CFC5A3.
+- **Blog**: Joseba quiere un gestor de contenidos para dar dinamismo y posicionar (Google e IAs),
+  alimentado con lo que cuente por notas de voz.
+
 ## Stack
 
 - **Framework**: Next.js 16 (App Router, Turbopack)
@@ -37,7 +64,7 @@ app/
 ├── contacto/                 # Formulario de contacto
 ├── nuevo-gimnasio/           # Página Founding Member con countdown
 ├── blog/                     # Blog (placeholder)
-├── admin/                    # Panel de administración (protegido por middleware)
+├── admin/                    # Panel de administración (protegido por proxy.ts)
 │   ├── login/                # Login con contraseña
 │   ├── dashboard/            # Resumen estadístico
 │   ├── knowledge/            # CRUD base de conocimiento del chatbot
@@ -86,7 +113,7 @@ lib/
     ├── activities.ts         # Datos de las 5 disciplinas
     └── centers.ts            # Datos de los centros (4 actuales + 1 nuevo)
 
-middleware.ts                 # Edge Runtime: protege /admin/* y /api/admin/*
+proxy.ts                      # Protege /admin/* y /api/admin/* (Next 16: sustituye a middleware.ts)
 ```
 
 ## Sistema de diseño
@@ -95,28 +122,28 @@ Todos los colores están como CSS variables en `app/globals.css`. **Nunca usar h
 
 ```css
 /* Verdes (marca principal) */
---color-forest:      #2A5741   /* botones, acentos principales */
---color-forest-dark: #1E3F2F
---color-moss:        #4A7C59
---color-sage:        #8BB19E
---color-sage-light:  #C2D8CE
+--color-forest:      #2E4D34   /* botones, acentos principales */
+--color-forest-dark: #1F3826
+--color-moss:        #4A6B50
+--color-sage:        #8E9B64
+--color-sage-light:  #ABB58C
 
 /* Grises oscuros (fondos dark, texto) */
---color-charcoal:    #1C2428   /* fondo secciones dark */
---color-iron:        #2E3C42   /* tarjetas sobre charcoal */
---color-steel:       #455A64   /* texto secundario */
---color-stone:       #78909C
---color-mist:        #B0BEC5
+--color-charcoal:    #111111   /* fondo secciones dark */
+--color-iron:        #1C1C1C   /* tarjetas sobre charcoal */
+--color-steel:       #4D4D4D   /* texto secundario */
+--color-stone:       #737373
+--color-mist:        #A3A3A3
 
-/* Tierra / arcilla (acentos secundarios) */
---color-clay:        #B5714A   /* botones CTA secundarios */
---color-clay-light:  #D4956E
---color-sand:        #D4B08C
---color-sand-light:  #EDD9BF
+/* Tierra (acentos secundarios) */
+--color-clay:        #CFC5A3   /* botones CTA secundarios */
+--color-clay-light:  #DDD5B8
+--color-sand:        #E0D9C3
+--color-sand-light:  #EBE5D4
 
 /* Bases */
---color-cream:       #F5F1EB
---color-surface:     #FAFAF8
+--color-cream:       #F0EBE0
+--color-surface:     #F8F6F1
 ```
 
 Clases de utilidad principales (en `globals.css`):
@@ -156,8 +183,8 @@ Todos los helpers están en `lib/kv.ts`. **Nunca llamar a `kv` directamente desd
 - Contraseña única configurada en `ADMIN_PASSWORD` (env var)
 - Al hacer login: `POST /api/admin/login` → valida password → set cookie `gorobel_admin` (httpOnly, 7 días)
 - Cookie firmada con HMAC-SHA256 usando `ADMIN_SECRET`
-- `middleware.ts` corre en Edge Runtime y verifica la cookie usando Web Crypto API
-- `lib/auth.ts` usa Node.js `crypto` — solo para API routes, **nunca importar desde middleware**
+- `proxy.ts` verifica la cookie usando Web Crypto API
+- `lib/auth.ts` usa Node.js `crypto` — solo para API routes, **nunca importar desde proxy.ts**
 
 ## Chatbot IA
 
