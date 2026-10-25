@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Link from "@/components/i18n/Link";
 import type { HomeContent } from "@/lib/content/home";
+import { PHOTOS } from "@/lib/photos";
 
 export default function PhilosophySection({ content }: { content: HomeContent["philosophy"] }) {
   return (
@@ -11,7 +12,7 @@ export default function PhilosophySection({ content }: { content: HomeContent["p
           <div className="relative h-[520px] hidden lg:block lg:sticky lg:top-28">
             <div className="absolute top-0 left-0 w-[72%] h-[78%] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://gorobelgara.com/wp-content/uploads/2025/06/Podcast-y-entreno-73.jpg"
+                src={PHOTOS.coach}
                 alt={content.imageAlt1}
                 fill
                 className="object-cover img-zoom"
@@ -20,7 +21,7 @@ export default function PhilosophySection({ content }: { content: HomeContent["p
             </div>
             <div className="absolute bottom-0 right-0 w-[55%] h-[55%] rounded-2xl overflow-hidden shadow-2xl ring-4 ring-[var(--color-cream)]">
               <Image
-                src="https://gorobelgara.com/wp-content/uploads/2025/06/Entreno-49.jpg"
+                src={PHOTOS.group}
                 alt={content.imageAlt2}
                 fill
                 className="object-cover img-zoom"

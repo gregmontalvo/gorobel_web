@@ -52,7 +52,7 @@ const es = {
         "Descubre las actividades y los espacios de entrenamiento del club en Laudio. Consulta horarios y encuentra una propuesta que encaje contigo.",
       address: CLUB.addressLaudio,
       streetAddress: "Polígono Industrialdea, Pabellón 42",
-      image: "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg",
+      image: "/photos/suelo.jpg",
       mapsUrl: CLUB.mapsLaudio,
     },
     {
@@ -62,7 +62,7 @@ const es = {
       description:
         "Conoce las propuestas del club en Amurrio. Entrenamiento acompañado y un lugar donde dar continuidad a tus objetivos.",
       address: "Amurrio (Álava)",
-      image: "https://gorobelgara.com/wp-content/uploads/2025/06/Entreno-49.jpg",
+      image: "/photos/grupo.jpg",
       mapsUrl: CLUB.mapsAmurrio,
     },
   ] as CenterItem[],
@@ -127,7 +127,7 @@ const eu: CentersContent = {
         "Ezagutu klubaren jarduerak eta entrenamendu guneak Laudion. Kontsultatu ordutegiak eta aurkitu zuri egokitzen zaizun proposamena.",
       address: CLUB.addressLaudio,
       streetAddress: "Polígono Industrialdea, Pabellón 42",
-      image: "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg",
+      image: "/photos/suelo.jpg",
       mapsUrl: CLUB.mapsLaudio,
     },
     {
@@ -137,7 +137,7 @@ const eu: CentersContent = {
       description:
         "Ezagutu klubaren proposamenak Amurrion. Lagunduta entrenatzea eta zure helburuei jarraipena emateko lekua.",
       address: "Amurrio (Araba)",
-      image: "https://gorobelgara.com/wp-content/uploads/2025/06/Entreno-49.jpg",
+      image: "/photos/grupo.jpg",
       mapsUrl: CLUB.mapsAmurrio,
     },
   ],

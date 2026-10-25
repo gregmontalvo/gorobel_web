@@ -4,7 +4,7 @@ export const strengthMobility55: BlogPostEntry = {
   slug: "fuerza-y-movilidad-mas-de-55",
   status: "published",
   date: "2026-10-12",
-  image: "https://gorobelgara.com/wp-content/uploads/2025/06/Podcast-y-entreno-73.jpg",
+  image: "/photos/entrenador.jpg",
   text: {
     es: {
       title: "Fuerza y movilidad a partir de los 55: por qué empezar ahora",

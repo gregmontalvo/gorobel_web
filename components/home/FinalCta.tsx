@@ -1,12 +1,16 @@
+import Image from "next/image";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import Link from "@/components/i18n/Link";
 import { CLUB } from "@/lib/content/common";
 import type { HomeContent } from "@/lib/content/home";
+import { PHOTOS } from "@/lib/photos";
 
 export default function FinalCta({ content }: { content: HomeContent["finalCta"] }) {
   return (
-    <section className="section-padding bg-[var(--color-forest)]">
-      <div className="container-narrow text-center">
+    <section className="relative overflow-hidden section-padding bg-[var(--color-forest)]">
+      <Image src={PHOTOS.group} alt="" fill sizes="100vw" className="object-cover object-[50%_40%]" />
+      <div className="absolute inset-0 bg-[var(--color-forest-dark)]/85" />
+      <div className="relative container-narrow text-center">
         <h2 className="text-headline font-display text-white mb-6">{content.title}</h2>
         <p className="text-white/75 text-lg leading-relaxed mb-10 max-w-xl mx-auto">{content.body}</p>
         <div className="flex flex-wrap items-center justify-center gap-4">

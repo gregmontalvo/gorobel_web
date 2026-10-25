@@ -10,7 +10,7 @@ import { alternatesFor, isLocale, localeUrl } from "@/lib/i18n/config";
 import { breadcrumbSchema, faqSchema, localBusinessSchema } from "@/lib/schema";
 
 const PATH = "/centros";
-const OG_IMAGE = "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg";
+const OG_IMAGE = "/photos/suelo.jpg";
 
 export async function generateMetadata({
   params,

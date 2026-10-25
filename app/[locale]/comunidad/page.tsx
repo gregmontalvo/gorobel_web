@@ -9,7 +9,7 @@ import { alternatesFor, isLocale, localeUrl } from "@/lib/i18n/config";
 import { breadcrumbSchema } from "@/lib/schema";
 
 const PATH = "/comunidad";
-const HERO_IMAGE = "https://gorobelgara.com/wp-content/uploads/2025/06/Podcast-y-entreno-73.jpg";
+const HERO_IMAGE = "/photos/entrenador.jpg";
 
 // Same order as `ideas`: educa, cerca de casa, reúne, suma.
 const IDEA_ICONS: LucideIcon[] = [GraduationCap, Home, Users, HandHeart];

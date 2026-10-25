@@ -5,9 +5,9 @@ import Image from "next/image";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import Link from "@/components/i18n/Link";
 import type { HomeContent } from "@/lib/content/home";
+import { PHOTOS } from "@/lib/photos";
 
-const HERO_IMAGE =
-  "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg";
+const HERO_IMAGE = PHOTOS.floor;
 
 export default function HeroSection({ content }: { content: HomeContent["hero"] }) {
   const scrollRef = useRef<HTMLDivElement>(null);

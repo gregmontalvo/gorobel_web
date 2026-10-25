@@ -4,7 +4,7 @@ export const functionalTraining: BlogPostEntry = {
   slug: "entrenamiento-funcional-para-empezar",
   status: "published",
   date: "2026-10-19",
-  image: "https://gorobelgara.com/wp-content/uploads/2024/03/photo_2024-02-28_23-33-44-1024x768.jpg",
+  image: "/photos/jaula.jpg",
   text: {
     es: {
       title: "Entrenamiento funcional para empezar: qué es y cómo adaptarlo a tu nivel",

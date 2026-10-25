@@ -10,9 +10,9 @@ import { alternatesFor, isLocale, localeUrl } from "@/lib/i18n/config";
 import { breadcrumbSchema } from "@/lib/schema";
 
 const PATH = "/sobre-nosotros";
-const HERO_IMAGE = "https://gorobelgara.com/wp-content/uploads/2025/06/Podcast-y-entreno-73.jpg";
+const HERO_IMAGE = "/photos/entrenador.jpg";
 const STORY_IMAGE =
-  "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg";
+  "/photos/suelo.jpg";
 
 const VALUE_ICONS: LucideIcon[] = [BookOpen, Heart, Repeat, Users2];
 

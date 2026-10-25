@@ -43,7 +43,7 @@ export default async function ContactoPage({ params }: Props) {
       phone: "+34667521542",
       email: CLUB.email,
       mapsUrl: CLUB.mapsLaudio,
-      image: "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg",
+      image: "/photos/suelo.jpg",
     }),
     faqSchema(t.faqs),
   ];
@@ -66,7 +66,7 @@ export default async function ContactoPage({ params }: Props) {
       <section className="relative pt-36 pb-16 bg-[var(--color-charcoal)] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://gorobelgara.com/wp-content/uploads/2025/06/Entreno-49.jpg"
+            src="/photos/grupo.jpg"
             alt={t.hero.imageAlt}
             fill
             priority

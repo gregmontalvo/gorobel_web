@@ -4,7 +4,7 @@ export const kidsSport: BlogPostEntry = {
   slug: "deporte-infantil-y-extraescolares",
   status: "published",
   date: "2026-10-23",
-  image: "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg",
+  image: "/photos/suelo.jpg",
   text: {
     es: {
       title: "Deporte infantil y extraescolares: cómo elegir bien",

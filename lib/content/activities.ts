@@ -26,15 +26,15 @@ export interface ActivityItem {
 }
 
 const IMAGES = {
-  group: "https://gorobelgara.com/wp-content/uploads/2024/03/photo_2024-02-28_23-33-44-1024x768.jpg",
-  training: "https://gorobelgara.com/wp-content/uploads/2025/06/Entreno-49.jpg",
-  center: "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg",
-  fight: "https://gorobelgara.com/wp-content/uploads/2024/04/2.png",
-  fightGround: "https://gorobelgara.com/wp-content/uploads/2024/04/photo_2024-04-01_23-32-22.jpg",
-  outdoor: "https://gorobelgara.com/wp-content/uploads/2025/06/Podcast-y-entreno-73.jpg",
-  heroBg: "https://gorobelgara.com/wp-content/uploads/2025/06/Entreno-49.jpg",
-  team: "https://gorobelgara.com/wp-content/uploads/2024/04/3.png",
-  kids: "https://gorobelgara.com/wp-content/uploads/2024/04/3.png",
+  group: "/photos/jaula.jpg",
+  training: "/photos/grupo.jpg",
+  center: "/photos/suelo.jpg",
+  fight: "/photos/kickboxing-1.png",
+  fightGround: "/photos/jiujitsu.jpg",
+  outdoor: "/photos/entrenador.jpg",
+  heroBg: "/photos/grupo.jpg",
+  team: "/photos/kickboxing-2.png",
+  kids: "/photos/kickboxing-2.png",
 } as const;
 
 const es = {

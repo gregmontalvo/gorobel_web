@@ -12,7 +12,7 @@ import { home } from "@/lib/content/home";
 import { isLocale, locales, SITE_URL, alternatesFor, type Locale } from "@/lib/i18n/config";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 
-const OG_IMAGE = "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg";
+const OG_IMAGE = "/photos/suelo.jpg";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

@@ -1,8 +1,8 @@
-import { localeUrl, type Locale } from "@/lib/i18n/config";
+import { localeUrl, SITE_URL, type Locale } from "@/lib/i18n/config";
 
 const BASE_URL = "https://gorobelgara.com";
 const LOGO_URL = "https://gorobelgara.com/wp-content/uploads/2023/02/icono-sin-fondo-300x300.png";
-const OG_IMAGE = "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg";
+const OG_IMAGE = `${SITE_URL}/photos/suelo.jpg`;
 
 const DESCRIPTION = {
   es: "Club de entrenamiento en Laudio (Llodio) y Amurrio. Entrenamiento funcional, fuerza, barre, boxeo, kickboxing, Jiu Jitsu, programa +55 e infancia y juventud. Desde 2019 en Aiaraldea.",

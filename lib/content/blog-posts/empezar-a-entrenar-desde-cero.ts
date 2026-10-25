@@ -4,7 +4,7 @@ export const startTraining: BlogPostEntry = {
   slug: "empezar-a-entrenar-desde-cero",
   status: "published",
   date: "2026-10-05",
-  image: "https://gorobelgara.com/wp-content/uploads/2025/06/Entreno-49.jpg",
+  image: "/photos/grupo.jpg",
   featured: true,
   text: {
     es: {

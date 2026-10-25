@@ -10,7 +10,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 
 const PATH = "/nuevo-gimnasio";
 const HERO_IMAGE =
-  "https://gorobelgara.com/wp-content/uploads/2024/03/photo_2024-02-28_23-33-44-1024x768.jpg";
+  "/photos/jaula.jpg";
 
 type PageProps = { params: Promise<{ locale: string }> };
 
