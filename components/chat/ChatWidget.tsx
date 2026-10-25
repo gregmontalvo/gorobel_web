@@ -2,21 +2,21 @@
 
 import { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send, Loader2, Bot } from "lucide-react";
+import { useLocale } from "@/components/i18n/LocaleProvider";
+import { chat } from "@/lib/content/chat";
 
 interface Message {
   role: "user" | "assistant";
   content: string;
 }
 
-const WELCOME_MESSAGE: Message = {
-  role: "assistant",
-  content:
-    "¡Hola! Soy Gorobot, el asistente de Gorobel Kirol Gunea 💪 ¿En qué puedo ayudarte? Puedo informarte sobre horarios, disciplinas, precios o cualquier duda sobre el club.",
-};
-
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([WELCOME_MESSAGE]);
+  const locale = useLocale();
+  const t = chat[locale];
+  const [messages, setMessages] = useState<Message[]>(() => [
+    { role: "assistant", content: t.welcome },
+  ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -46,17 +46,16 @@ export default function ChatWidget() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          messages: nextMessages.map(({ role, content }) => ({ role, content })),
+          locale,
+          // The welcome message is the widget's, not part of the conversation.
+          messages: nextMessages.slice(1).map(({ role, content }) => ({ role, content })),
         }),
       });
-      const data = await res.json();
-      const reply = data.reply || "Lo siento, no he podido procesar tu pregunta.";
+      const data = await res.json().catch(() => ({}));
+      const reply = data.reply || data.error || t.noReply;
       setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
     } catch {
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", content: "Ha ocurrido un error. Inténtalo de nuevo." },
-      ]);
+      setMessages((prev) => [...prev, { role: "assistant", content: t.error }]);
     } finally {
       setLoading(false);
     }
@@ -73,13 +72,13 @@ export default function ChatWidget() {
               <Bot className="w-4 h-4 text-[var(--color-forest-dark)]" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-white font-semibold text-sm leading-none">Gorobot</p>
-              <p className="text-[var(--color-sage-light)] text-xs mt-0.5">Asistente de Gorobel</p>
+              <p className="text-white font-semibold text-sm leading-none">{t.name}</p>
+              <p className="text-[var(--color-sage-light)] text-xs mt-0.5">{t.subtitle}</p>
             </div>
             <button
               onClick={() => setOpen(false)}
               className="text-white/70 hover:text-white transition-colors"
-              aria-label="Cerrar chat"
+              aria-label={t.close}
             >
               <X className="w-5 h-5" />
             </button>
@@ -108,7 +107,7 @@ export default function ChatWidget() {
               <div className="flex justify-start">
                 <div className="bg-white px-3 py-2 rounded-xl rounded-bl-sm shadow-sm border border-gray-100 flex items-center gap-1.5">
                   <Loader2 className="w-3.5 h-3.5 text-[var(--color-stone)] animate-spin" />
-                  <span className="text-xs text-[var(--color-stone)]">Escribiendo…</span>
+                  <span className="text-xs text-[var(--color-stone)]">{t.typing}</span>
                 </div>
               </div>
             )}
@@ -122,7 +121,7 @@ export default function ChatWidget() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Escribe tu pregunta…"
+              placeholder={t.placeholder}
               disabled={loading}
               className="flex-1 text-sm bg-[var(--color-surface)] border border-gray-200 rounded-lg px-3 py-2 outline-none focus:border-[var(--color-moss)] placeholder:text-[var(--color-mist)] disabled:opacity-60 transition-colors"
             />
@@ -130,7 +129,7 @@ export default function ChatWidget() {
               type="submit"
               disabled={!input.trim() || loading}
               className="w-8 h-8 rounded-lg bg-[var(--color-forest)] flex items-center justify-center text-white disabled:opacity-40 transition-opacity shrink-0"
-              aria-label="Enviar"
+              aria-label={t.send}
             >
               <Send className="w-4 h-4" />
             </button>
@@ -142,7 +141,7 @@ export default function ChatWidget() {
       <button
         onClick={() => setOpen((v) => !v)}
         className="fixed bottom-6 right-4 sm:right-6 z-50 w-14 h-14 rounded-full bg-[var(--color-forest)] text-white shadow-lg hover:bg-[var(--color-forest-dark)] transition-colors flex items-center justify-center"
-        aria-label={open ? "Cerrar chat" : "Abrir chat"}
+        aria-label={open ? t.close : t.open}
       >
         {open ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
       </button>

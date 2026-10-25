@@ -31,34 +31,38 @@ export interface FounderLead {
   createdAt: string;
 }
 
+/** Featured notice shown at the top of every page (events, enrolments, closures). */
+export interface SiteBanner {
+  active: boolean;
+  text: { es: string; eu: string };
+  ctaLabel: { es: string; eu: string };
+  /** Internal path ("/contacto") or absolute URL. */
+  ctaHref: string;
+  /** ISO date; the notice disappears by itself after it. */
+  expiresAt: string | null;
+}
+
 export interface SiteSettings {
   phone: string;
   whatsapp: string;
   email: string;
   announcement: string | null;
+  banner?: SiteBanner | null;
   schedule: Record<string, string>;
   pricing: Record<string, string>;
 }
 
 // ─── Default settings ────────────────────────────────────────────────────────
 
+// Schedules and prices are left empty on purpose: the chat sends visitors to the team until the club fills them in.
 const DEFAULT_SETTINGS: SiteSettings = {
   phone: "667 521 542",
   whatsapp: "34667521542",
-  email: "gorobelgara@gmail.com",
+  email: "info@gorobelgara.com",
   announcement: null,
-  schedule: {
-    CrossTraining: "L-V: 7:00-8:30, 9:00-10:30, 17:30-20:30. S: 9:30-11:00",
-    Boxeo: "L-V: 19:00-20:00. Consultar horarios actualizados.",
-    "Kick Boxing": "L-V: 20:00-21:00. Consultar horarios actualizados.",
-    "Jiu Jitsu": "L-V: 20:30-22:00. S: 10:00-11:30",
-    OCR: "Consultar calendario de eventos en recepción.",
-  },
-  pricing: {
-    CrossTraining: "Consultar en recepción o por WhatsApp.",
-    "Artes Marciales": "Consultar en recepción o por WhatsApp.",
-    "Pack Combinado": "Consultar en recepción o por WhatsApp.",
-  },
+  banner: null,
+  schedule: {},
+  pricing: {},
 };
 
 // ─── Knowledge Base ───────────────────────────────────────────────────────────
@@ -143,9 +147,21 @@ export async function getFounderLeads(): Promise<FounderLead[]> {
 
 // ─── Site Settings ────────────────────────────────────────────────────────────
 
+/** True when the KV credentials are present (Vercel KV or Upstash integration). */
+export function isKvConfigured(): boolean {
+  return Boolean(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
+}
+
+/** Stored settings over the defaults; falls back to the defaults when KV is missing or down. */
 export async function getSiteSettings(): Promise<SiteSettings> {
-  const settings = await kv.get<SiteSettings>("site:settings");
-  return settings ?? DEFAULT_SETTINGS;
+  if (!isKvConfigured()) return DEFAULT_SETTINGS;
+  try {
+    const stored = await kv.get<Partial<SiteSettings>>("site:settings");
+    return stored ? { ...DEFAULT_SETTINGS, ...stored } : DEFAULT_SETTINGS;
+  } catch (error) {
+    console.warn("[kv] site settings unavailable, using defaults:", error instanceof Error ? error.message : error);
+    return DEFAULT_SETTINGS;
+  }
 }
 
 export async function updateSiteSettings(data: Partial<SiteSettings>): Promise<SiteSettings> {

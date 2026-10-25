@@ -1,128 +1,111 @@
+import { localeUrl, type Locale } from "@/lib/i18n/config";
+
 const BASE_URL = "https://gorobelgara.com";
 const LOGO_URL = "https://gorobelgara.com/wp-content/uploads/2023/02/icono-sin-fondo-300x300.png";
 const OG_IMAGE = "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg";
 
-export const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": `${BASE_URL}/#organization`,
-  name: "Gorobel Kirol Gunea",
-  url: BASE_URL,
-  logo: {
-    "@type": "ImageObject",
-    url: LOGO_URL,
-    width: 300,
-    height: 300,
-  },
-  image: OG_IMAGE,
-  description:
-    "Más que un gimnasio. CrossTraining, Boxeo, Kickboxing, Jiu Jitsu y OCR en Llodio y Amurrio. Pioneros del CrossFit en España desde 2010.",
-  foundingDate: "2010",
-  areaServed: [
-    { "@type": "City", name: "Llodio" },
-    { "@type": "City", name: "Amurrio" },
-    { "@type": "AdministrativeArea", name: "Euskadi" },
-  ],
-  telephone: "+34667521542",
-  email: "info@gorobelgara.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Polígono Industrialdea, Pabellón 42",
-    addressLocality: "Llodio",
-    addressRegion: "Álava",
-    postalCode: "01400",
-    addressCountry: "ES",
-  },
-  sameAs: [
-    "https://www.instagram.com/gorobelkirolgunea/",
-    "https://www.facebook.com/gorobelkirolgunea",
-  ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+34667521542",
-    contactType: "customer service",
-    availableLanguage: ["Spanish", "Basque"],
-  },
-};
+const DESCRIPTION = {
+  es: "Club de entrenamiento en Laudio (Llodio) y Amurrio. Entrenamiento funcional, fuerza, barre, boxeo, kickboxing, Jiu Jitsu, programa +55 e infancia y juventud. Desde 2019 en Aiaraldea.",
+  eu: "Entrenamendu kluba Laudion eta Amurrion. Entrenamendu funtzionala, indarra, barre, boxeoa, kickboxing-a, Jiu Jitsua, +55 programa eta haurtzaroa eta gaztaroa. 2019tik Aiaraldean.",
+} as const;
 
-export const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": `${BASE_URL}/#website`,
-  url: BASE_URL,
-  name: "Gorobel Kirol Gunea",
-  description:
-    "Gimnasio CrossFit, Boxeo, Kickboxing, Jiu Jitsu y OCR en Llodio y Amurrio. Pioneros desde 2010.",
-  publisher: { "@id": `${BASE_URL}/#organization` },
-  inLanguage: "es-ES",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: `${BASE_URL}/blog?q={search_term_string}`,
+export function organizationSchema(locale: Locale) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "@id": `${BASE_URL}/#organization`,
+    name: "GOROBEL · Gorobel Kirol Gunea",
+    alternateName: ["Gorobel Kirol Gunea Laudio", "Gorobel Kirol Gunea Amurrio"],
+    url: BASE_URL,
+    logo: {
+      "@type": "ImageObject",
+      url: LOGO_URL,
+      width: 300,
+      height: 300,
     },
-    "query-input": "required name=search_term_string",
-  },
-};
+    image: OG_IMAGE,
+    description: DESCRIPTION[locale],
+    foundingDate: "2019-05-13",
+    areaServed: [
+      { "@type": "City", name: "Laudio/Llodio" },
+      { "@type": "City", name: "Amurrio" },
+      { "@type": "AdministrativeArea", name: "Aiaraldea" },
+    ],
+    telephone: "+34667521542",
+    email: "info@gorobelgara.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Polígono Industrialdea, Pabellón 42",
+      addressLocality: "Laudio/Llodio",
+      addressRegion: "Álava",
+      postalCode: "01400",
+      addressCountry: "ES",
+    },
+    sameAs: [
+      "https://www.instagram.com/gorobelkirolgunea/",
+      "https://www.facebook.com/gorobelkirolgunea",
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+34667521542",
+      contactType: "customer service",
+      availableLanguage: ["Spanish", "Basque"],
+    },
+  };
+}
+
+export function websiteSchema(locale: Locale) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${BASE_URL}/#website`,
+    url: BASE_URL,
+    name: "GOROBEL · Club de entrenamiento",
+    description: DESCRIPTION[locale],
+    publisher: { "@id": `${BASE_URL}/#organization` },
+    inLanguage: locale === "eu" ? "eu-ES" : "es-ES",
+  };
+}
 
 export function localBusinessSchema(opts: {
+  locale: Locale;
+  /** Anchor of the centre on /centros ("laudio" | "amurrio"). */
   id: string;
   name: string;
   description: string;
-  streetAddress: string;
+  /** Street address when known. */
+  streetAddress?: string;
   city: string;
-  postalCode?: string;
   phone: string;
   email: string;
   mapsUrl: string;
   image: string;
-  activities: string[];
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "HealthClub", "SportsActivityLocation"],
+    "@type": "SportsActivityLocation",
     "@id": `${BASE_URL}/centros#${opts.id}`,
     name: opts.name,
     description: opts.description,
-    url: `${BASE_URL}/centros#${opts.id}`,
+    url: `${localeUrl(opts.locale, "/centros")}#${opts.id}`,
+    inLanguage: opts.locale === "eu" ? "eu-ES" : "es-ES",
     telephone: opts.phone,
     email: opts.email,
     image: opts.image,
-    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: opts.streetAddress,
+      ...(opts.streetAddress ? { streetAddress: opts.streetAddress } : {}),
       addressLocality: opts.city,
       addressRegion: "Álava",
-      postalCode: opts.postalCode ?? "01400",
       addressCountry: "ES",
     },
     hasMap: opts.mapsUrl,
-    sport: opts.activities,
     parentOrganization: { "@id": `${BASE_URL}/#organization` },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: opts.city === "Llodio" ? 43.1422 : 43.0494,
-      longitude: opts.city === "Llodio" ? -3.0006 : -2.9927,
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "06:30",
-        closes: "22:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Saturday"],
-        opens: "09:00",
-        closes: "14:00",
-      },
-    ],
   };
 }
 
 export function blogPostingSchema(opts: {
+  locale: Locale;
   slug: string;
   title: string;
   description: string;
@@ -132,10 +115,11 @@ export function blogPostingSchema(opts: {
   keywords: string[];
   category: string;
 }) {
+  const url = localeUrl(opts.locale, `/blog/${opts.slug}`);
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "@id": `${BASE_URL}/blog/${opts.slug}`,
+    "@id": url,
     headline: opts.title,
     description: opts.description,
     image: opts.image,
@@ -154,11 +138,11 @@ export function blogPostingSchema(opts: {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${BASE_URL}/blog/${opts.slug}`,
+      "@id": url,
     },
     keywords: opts.keywords.join(", "),
     articleSection: opts.category,
-    inLanguage: "es-ES",
+    inLanguage: opts.locale === "eu" ? "eu-ES" : "es-ES",
   };
 }
 

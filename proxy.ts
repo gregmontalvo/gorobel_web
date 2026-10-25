@@ -53,9 +53,23 @@ export async function proxy(request: NextRequest) {
     }
   }
 
-  return NextResponse.next();
+  if (isAdminRoute || pathname.startsWith("/api/")) return NextResponse.next();
+
+  // Castilian is served from the root, Basque from /eu: the pages live under app/[locale].
+  if (pathname === "/eu" || pathname.startsWith("/eu/")) return NextResponse.next();
+  if (pathname === "/es" || pathname.startsWith("/es/")) {
+    const url = request.nextUrl.clone();
+    url.pathname = pathname.slice(3) || "/";
+    return NextResponse.redirect(url, 308);
+  }
+  const url = request.nextUrl.clone();
+  url.pathname = `/es${pathname === "/" ? "" : pathname}`;
+  return NextResponse.rewrite(url);
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/admin/:path*"],
+  matcher: [
+    "/api/admin/:path*",
+    "/((?!api|_next|favicon.ico|robots.txt|sitemap.xml|.*\\..*).*)",
+  ],
 };

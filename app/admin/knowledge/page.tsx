@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, ToggleLeft, ToggleRight, Loader2, X, Check } from "lucide-react";
 import type { KbEntry } from "@/lib/kv";
 
-const CATEGORIES = ["Horarios", "Precios", "Disciplinas", "Ubicación", "General", "Promociones"];
+const CATEGORIES = ["Horarios", "Precios", "Entrenamientos", "Ubicación", "General", "Promociones"];
 
 function EntryModal({
   entry,
@@ -64,7 +64,7 @@ function EntryModal({
               value={form.question}
               onChange={(e) => setForm((f) => ({ ...f, question: e.target.value }))}
               required
-              placeholder="¿A qué hora abren?"
+              placeholder="¿Puedo empezar si nunca he entrenado?"
               className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[var(--color-moss)] bg-[var(--color-surface)]"
             />
           </div>
@@ -77,7 +77,7 @@ function EntryModal({
               onChange={(e) => setForm((f) => ({ ...f, answer: e.target.value }))}
               required
               rows={4}
-              placeholder="Abrimos de lunes a viernes a las 7:00h…"
+              placeholder="Sí. Hablamos contigo y adaptamos el entrenamiento a tu punto de partida…"
               className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-[var(--color-moss)] bg-[var(--color-surface)] resize-none"
             />
           </div>
