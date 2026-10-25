@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { saveContactLead } from "@/lib/kv";
+import { getBadgieLeadConfig, sendLeadToBadgie } from "@/lib/badgie-lead";
 import { escapeHtml, getMailConfig, oneLine, sendMail } from "@/lib/email";
 import { clientIp, isRateLimited } from "@/lib/rate-limit";
 import { contact, isActivityId } from "@/lib/content/contact";
@@ -56,8 +57,9 @@ export async function POST(request: NextRequest) {
   if (fields.length > 0) return fail("invalid", 400, { fields });
 
   const mailConfig = getMailConfig();
-  if (!mailConfig) {
-    console.error("[contact] RESEND_API_KEY or CONTACT_FROM is not set: the message was not sent");
+  const badgieConfig = getBadgieLeadConfig();
+  if (!mailConfig && !badgieConfig) {
+    console.error("[contact] neither Badgie nor mail is configured: the message was not delivered");
     return fail("not_configured", 503);
   }
 
@@ -94,16 +96,28 @@ export async function POST(request: NextRequest) {
     new Promise((resolve) => setTimeout(resolve, 3000)),
   ]).catch((error) => console.warn("[contact] KV backup skipped:", error instanceof Error ? error.message : error));
 
-  try {
-    await sendMail(mailConfig, {
-      subject: `Web Gorobel [${locale.toUpperCase()}] · ${activityLabel} · ${oneLine(name)}`,
-      text: plain,
-      html,
-      replyTo: email,
-    });
-  } catch (error) {
+  // The lead lands in the club's Badgie account; the email is the immediate notification.
+  // Either one reaching the club is enough, so one failing never loses the message.
+  const [crm, mail] = await Promise.allSettled([
+    badgieConfig
+      ? sendLeadToBadgie(badgieConfig, { name, email, phone, message, interest: activityLabel, locale })
+      : Promise.reject(new Error("not configured")),
+    mailConfig
+      ? sendMail(mailConfig, {
+          subject: `Web Gorobel [${locale.toUpperCase()}] · ${activityLabel} · ${oneLine(name)}`,
+          text: plain,
+          html,
+          replyTo: email,
+        })
+      : Promise.reject(new Error("not configured")),
+  ]);
+  for (const [channel, outcome] of [["badgie", crm], ["mail", mail]] as const) {
+    if (outcome.status === "rejected" && outcome.reason?.message !== "not configured") {
+      console.error(`[contact] ${channel} not delivered:`, outcome.reason?.message ?? outcome.reason);
+    }
+  }
+  if (crm.status === "rejected" && mail.status === "rejected") {
     await backup;
-    console.error("[contact] mail not delivered:", error instanceof Error ? error.message : error);
     return fail("send_failed", 502);
   }
 
