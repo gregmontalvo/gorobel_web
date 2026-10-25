@@ -67,7 +67,6 @@ export default async function QueHacemosPage({ params }: { params: Promise<{ loc
           />
         </div>
         <div className="relative z-10 container-wide">
-          <p className="section-label !text-[var(--color-sage)]">{c.hero.eyebrow}</p>
           <h1 className="text-headline font-display text-white max-w-2xl">{c.hero.title}</h1>
           <p className="text-white/65 text-lg mt-4 max-w-xl">{c.hero.lead}</p>
           <nav aria-label={c.hero.jumpTo} className="flex flex-wrap gap-2 mt-8">

@@ -10,7 +10,6 @@ export default function PageCta({ locale }: { locale: Locale }) {
   return (
     <section className="section-padding bg-[var(--color-forest)]">
       <div className="container-narrow text-center">
-        <p className="section-label justify-center !text-[var(--color-sage-light)]">{cta.label}</p>
         <h2 className="text-headline font-display text-white mb-6">{cta.title}</h2>
         <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-lg mx-auto">{cta.body}</p>
         <div className="flex flex-wrap items-center justify-center gap-4">

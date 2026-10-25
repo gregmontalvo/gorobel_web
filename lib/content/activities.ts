@@ -32,9 +32,9 @@ const IMAGES = {
   fight: "https://gorobelgara.com/wp-content/uploads/2024/04/2.png",
   fightGround: "https://gorobelgara.com/wp-content/uploads/2024/04/photo_2024-04-01_23-32-22.jpg",
   outdoor: "https://gorobelgara.com/wp-content/uploads/2025/06/Podcast-y-entreno-73.jpg",
-  heroBg: "https://gorobelgara.com/wp-content/uploads/2025/06/1-Editada-e1749203233595.png",
+  heroBg: "https://gorobelgara.com/wp-content/uploads/2025/06/Entreno-49.jpg",
   team: "https://gorobelgara.com/wp-content/uploads/2024/04/3.png",
-  kids: "https://gorobelgara.com/wp-content/uploads/2024/03/insta.png",
+  kids: "https://gorobelgara.com/wp-content/uploads/2024/04/3.png",
 } as const;
 
 const es = {

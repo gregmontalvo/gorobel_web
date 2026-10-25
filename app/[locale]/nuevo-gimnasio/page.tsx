@@ -54,7 +54,6 @@ export default async function NewCenterPage({ params }: PageProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-charcoal)] via-[var(--color-charcoal)]/90 to-[var(--color-charcoal)]/60" />
         </div>
         <div className="relative z-10 container-wide">
-          <p className="section-label !text-[var(--color-sage)]">{c.hero.label}</p>
           <h1 className="text-headline font-display text-white max-w-3xl mb-5">{c.hero.title}</h1>
           <p className="text-white/65 text-xl leading-relaxed max-w-2xl mb-10">{c.hero.body}</p>
           <div className="flex flex-wrap gap-4">
@@ -72,7 +71,6 @@ export default async function NewCenterPage({ params }: PageProps) {
       <section className="section-padding bg-[var(--color-surface)]">
         <div className="container-wide">
           <div className="max-w-3xl mb-14">
-            <p className="section-label">{c.focus.label}</p>
             <h2 className="text-headline font-display text-[var(--color-charcoal)]">
               {c.focus.title}
             </h2>
@@ -102,7 +100,6 @@ export default async function NewCenterPage({ params }: PageProps) {
         <div className="container-narrow">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="lg:pt-4">
-              <p className="section-label !text-[var(--color-sage)]">{c.interest.label}</p>
               <h2 className="font-display font-black text-white text-4xl leading-tight mb-6">
                 {c.interest.title}
               </h2>

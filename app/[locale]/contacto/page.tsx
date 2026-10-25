@@ -66,7 +66,7 @@ export default async function ContactoPage({ params }: Props) {
       <section className="relative pt-36 pb-16 bg-[var(--color-charcoal)] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://gorobelgara.com/wp-content/uploads/2025/06/1-Editada-e1749203233595.png"
+            src="https://gorobelgara.com/wp-content/uploads/2025/06/Entreno-49.jpg"
             alt={t.hero.imageAlt}
             fill
             priority
@@ -75,7 +75,6 @@ export default async function ContactoPage({ params }: Props) {
           />
         </div>
         <div className="relative z-10 container-wide">
-          <p className="section-label !text-[var(--color-sage)]">{t.hero.label}</p>
           <h1 className="text-headline font-display text-white max-w-xl">{t.hero.title}</h1>
           <p className="text-white/65 text-lg mt-4 max-w-lg">{t.hero.lead}</p>
         </div>

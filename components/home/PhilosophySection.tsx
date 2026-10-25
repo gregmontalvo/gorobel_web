@@ -36,18 +36,15 @@ export default function PhilosophySection({ content }: { content: HomeContent["p
           </div>
 
           <div>
-            <p className="section-label">{content.label}</p>
             <h2 className="text-headline font-display text-[var(--color-charcoal)] mb-6">
               {content.title}
             </h2>
             <p className="text-[var(--color-steel)] text-lg leading-relaxed mb-10">{content.intro}</p>
 
             <div className="space-y-7">
-              {content.pillars.map(({ title, body }, i) => (
+              {content.pillars.map(({ title, body }) => (
                 <div key={title} className="flex gap-5">
-                  <div className="shrink-0 w-12 h-12 rounded-xl bg-[var(--color-forest)]/10 flex items-center justify-center font-display font-black text-[var(--color-forest)]">
-                    {i + 1}
-                  </div>
+                  <div className="shrink-0 w-1 self-stretch rounded-full bg-[var(--color-sage)]" />
                   <div>
                     <h3 className="font-display font-bold text-[var(--color-charcoal)] mb-1">{title}</h3>
                     <p className="text-[var(--color-steel)] text-sm leading-relaxed">{body}</p>

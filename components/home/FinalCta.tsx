@@ -7,7 +7,6 @@ export default function FinalCta({ content }: { content: HomeContent["finalCta"]
   return (
     <section className="section-padding bg-[var(--color-forest)]">
       <div className="container-narrow text-center">
-        <p className="section-label justify-center !text-[var(--color-sage-light)]">{content.label}</p>
         <h2 className="text-headline font-display text-white mb-6">{content.title}</h2>
         <p className="text-white/75 text-lg leading-relaxed mb-10 max-w-xl mx-auto">{content.body}</p>
         <div className="flex flex-wrap items-center justify-center gap-4">

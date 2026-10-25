@@ -5,7 +5,7 @@ import type { HomeContent } from "@/lib/content/home";
 
 const IMAGES = {
   laudio: "https://gorobelgara.com/wp-content/uploads/2025/06/ARG02501-scaled-e1749203039962.jpg",
-  amurrio: "https://gorobelgara.com/wp-content/uploads/2025/06/1-Editada-e1749203233595.png",
+  amurrio: "https://gorobelgara.com/wp-content/uploads/2025/06/Entreno-49.jpg",
 };
 
 export default function CentersPreview({ content }: { content: HomeContent["centers"] }) {
@@ -18,7 +18,6 @@ export default function CentersPreview({ content }: { content: HomeContent["cent
     <section className="section-padding bg-[var(--color-cream)]">
       <div className="container-wide">
         <div className="max-w-3xl mb-14">
-          <p className="section-label">{content.label}</p>
           <h2 className="text-headline font-display text-[var(--color-charcoal)] mb-5">{content.title}</h2>
           <p className="text-[var(--color-steel)] text-lg leading-relaxed">{content.intro}</p>
         </div>

@@ -3,7 +3,6 @@ import { Check, ArrowRight } from "lucide-react";
 import Link from "@/components/i18n/Link";
 import type { ActivityItem } from "@/lib/content/activities";
 
-const BADGE_COLORS = ["#2E4D34", "#8E9B64", "#4A6B50", "#1C1C1C"];
 
 interface ActivitySectionProps {
   activity: ActivityItem;
@@ -31,14 +30,6 @@ export default function ActivitySection({ activity, index, imageAlt, labels }: A
               className="object-cover img-zoom"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div
-              className="absolute top-5 left-5 w-12 h-12 rounded-xl flex items-center justify-center"
-              style={{ backgroundColor: BADGE_COLORS[index % BADGE_COLORS.length] }}
-            >
-              <span className="text-white font-display font-black text-sm">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-            </div>
           </div>
 
           <div>

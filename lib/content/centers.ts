@@ -62,7 +62,7 @@ const es = {
       description:
         "Conoce las propuestas del club en Amurrio. Entrenamiento acompañado y un lugar donde dar continuidad a tus objetivos.",
       address: "Amurrio (Álava)",
-      image: "https://gorobelgara.com/wp-content/uploads/2025/06/1-Editada-e1749203233595.png",
+      image: "https://gorobelgara.com/wp-content/uploads/2025/06/Entreno-49.jpg",
       mapsUrl: CLUB.mapsAmurrio,
     },
   ] as CenterItem[],
@@ -137,7 +137,7 @@ const eu: CentersContent = {
       description:
         "Ezagutu klubaren proposamenak Amurrion. Lagunduta entrenatzea eta zure helburuei jarraipena emateko lekua.",
       address: "Amurrio (Araba)",
-      image: "https://gorobelgara.com/wp-content/uploads/2025/06/1-Editada-e1749203233595.png",
+      image: "https://gorobelgara.com/wp-content/uploads/2025/06/Entreno-49.jpg",
       mapsUrl: CLUB.mapsAmurrio,
     },
   ],

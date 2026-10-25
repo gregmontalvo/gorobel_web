@@ -75,7 +75,6 @@ export default async function CentrosPage({ params }: { params: Promise<{ locale
       <section className="relative pt-36 pb-20 bg-[var(--color-charcoal)] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-forest-dark)] to-[var(--color-charcoal)] opacity-80" />
         <div className="relative z-10 container-wide">
-          <p className="section-label !text-[var(--color-sage)]">{c.hero.eyebrow}</p>
           <h1 className="text-headline font-display text-white max-w-2xl">{c.hero.title}</h1>
           <p className="text-white/65 text-lg mt-4 max-w-xl">{c.hero.lead}</p>
           <div className="flex flex-wrap gap-3 mt-8">

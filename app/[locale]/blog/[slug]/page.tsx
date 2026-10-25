@@ -126,7 +126,6 @@ export default async function BlogPostPage({ params }: Props) {
 
           <div className="mt-14 pt-10 border-t border-[var(--color-mist)]/40">
             <div className="bg-[var(--color-charcoal)] rounded-2xl p-8 lg:p-10 text-center">
-              <p className="section-label justify-center !text-[var(--color-sage)]">{ui.post.cta.label}</p>
               <p className="font-display font-black text-white text-2xl lg:text-3xl mb-3">{ui.post.cta.title}</p>
               <p className="text-white/60 mb-6 max-w-md mx-auto">{ui.post.cta.text}</p>
               <Link href="/contacto" className="btn-primary">
@@ -141,7 +140,6 @@ export default async function BlogPostPage({ params }: Props) {
       {related.length > 0 && (
         <section className="section-padding bg-[var(--color-cream)]">
           <div className="container-wide">
-            <p className="section-label">{ui.post.moreLabel}</p>
             <h2 className="font-display font-black text-[var(--color-charcoal)] text-2xl lg:text-3xl mb-10">
               {ui.post.moreTitle}
             </h2>

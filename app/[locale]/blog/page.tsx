@@ -41,7 +41,6 @@ export default async function BlogPage({ params }: Props) {
     <>
       <section className="pt-36 pb-16 bg-[var(--color-charcoal)]">
         <div className="container-wide">
-          <p className="section-label !text-[var(--color-sage)]">{ui.list.label}</p>
           <h1 className="text-headline font-display text-white max-w-2xl">{ui.list.title}</h1>
           <p className="text-white/60 text-lg mt-4 max-w-2xl">{ui.list.intro}</p>
         </div>

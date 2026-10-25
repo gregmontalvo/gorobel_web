@@ -46,7 +46,6 @@ export default function LegalPage({
 
       <section className="pt-36 pb-16 bg-[var(--color-charcoal)]">
         <div className="container-narrow">
-          <p className="section-label !text-[var(--color-sage)]">{page.label}</p>
           <h1 className="text-headline font-display text-white">{page.title}</h1>
         </div>
       </section>

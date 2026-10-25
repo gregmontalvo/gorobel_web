@@ -7,7 +7,6 @@ export default function CommunitySection({ content }: { content: HomeContent["co
     <section className="section-padding bg-[var(--color-charcoal)]">
       <div className="container-wide">
         <div className="max-w-3xl mb-14">
-          <p className="section-label !text-[var(--color-sage)]">{content.label}</p>
           <h2 className="text-headline font-display text-white mb-5">{content.title}</h2>
           <p className="text-white/65 text-lg leading-relaxed">{content.intro}</p>
         </div>

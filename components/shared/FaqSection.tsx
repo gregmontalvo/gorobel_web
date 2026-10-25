@@ -4,7 +4,6 @@ export interface FaqItem {
 }
 
 interface FaqSectionProps {
-  label?: string;
   heading?: string;
   faqs: FaqItem[];
   bg?: string;
@@ -12,7 +11,6 @@ interface FaqSectionProps {
 }
 
 export default function FaqSection({
-  label = "FAQ",
   heading = "Preguntas frecuentes",
   faqs,
   bg = "bg-[var(--color-cream)]",
@@ -21,15 +19,11 @@ export default function FaqSection({
   const headingColor = dark
     ? "text-white"
     : "text-[var(--color-charcoal)]";
-  const labelColor = dark
-    ? "!text-[var(--color-sage)]"
-    : "";
 
   return (
     <section className={`section-padding ${bg}`}>
       <div className="container-narrow">
         <div className="text-center mb-12">
-          <p className={`section-label justify-center ${labelColor}`}>{label}</p>
           <h2 className={`text-headline font-display ${headingColor}`}>
             {heading}
           </h2>

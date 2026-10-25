@@ -38,29 +38,12 @@ export default function HeroSection({ content }: { content: HomeContent["hero"] 
 
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-[var(--color-moss)]" />
 
-      <div className="relative z-10 container-wide flex-1 flex items-end lg:items-center pb-20 pt-40 lg:py-0 w-full">
+      <div className="relative z-10 container-wide flex-1 flex items-end lg:items-center pb-24 pt-36 lg:pt-32 lg:pb-28 w-full">
         <div className="max-w-3xl">
-          <div className="flex items-center gap-3 mb-6 animate-fade-up">
-            <span className="block w-10 h-px bg-[var(--color-clay)]" />
-            <span className="text-[var(--color-clay)] text-xs font-bold uppercase tracking-[0.2em]">
-              {content.eyebrow}
-              <span className="hidden sm:inline"> · {content.places}</span>
-            </span>
-          </div>
-          <p className="sm:hidden text-[var(--color-clay)] text-xs font-bold uppercase tracking-[0.2em] -mt-4 mb-6">
-            {content.places}
-          </p>
-
           <h1 className="font-display font-black leading-[1.05] tracking-tight text-[clamp(2.25rem,5.2vw,4.5rem)] text-white mb-6 animate-fade-up delay-100">
             {content.titleLine1}
             <br />
-            <span className="relative inline-block" style={{ color: "var(--color-sage)" }}>
-              {content.titleLine2}
-              <span
-                className="absolute -bottom-2 left-0 right-0 h-1 rounded-full opacity-60"
-                style={{ background: "var(--color-clay)" }}
-              />
-            </span>
+            <span style={{ color: "var(--color-sage)" }}>{content.titleLine2}</span>
           </h1>
 
           <p className="text-white/85 text-lg lg:text-xl leading-relaxed max-w-xl mb-4 animate-fade-up delay-200">
@@ -79,14 +62,6 @@ export default function HeroSection({ content }: { content: HomeContent["hero"] 
               {content.secondary.label}
             </Link>
           </div>
-
-          <ul className="flex flex-wrap gap-x-8 gap-y-2 mt-14 pt-8 border-t border-white/15 animate-fade-up delay-400">
-            {content.pillars.map((pillar) => (
-              <li key={pillar} className="text-white/60 text-sm font-semibold uppercase tracking-wide">
-                {pillar}
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
 

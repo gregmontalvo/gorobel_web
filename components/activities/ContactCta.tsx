@@ -2,7 +2,6 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 import Link from "@/components/i18n/Link";
 
 interface ContactCtaProps {
-  eyebrow: string;
   title: string;
   body: string;
   primary: { label: string; href: string };
@@ -10,11 +9,10 @@ interface ContactCtaProps {
 }
 
 /** Closing call to action that leads to the contact page. */
-export default function ContactCta({ eyebrow, title, body, primary, secondary }: ContactCtaProps) {
+export default function ContactCta({ title, body, primary, secondary }: ContactCtaProps) {
   return (
     <section className="section-padding bg-[var(--color-forest)]">
       <div className="container-narrow text-center">
-        <p className="section-label justify-center !text-[var(--color-sage-light)]">{eyebrow}</p>
         <h2 className="text-headline font-display text-white mb-6">{title}</h2>
         <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-lg mx-auto">{body}</p>
         <div className="flex flex-wrap items-center justify-center gap-4">

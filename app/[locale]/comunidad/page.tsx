@@ -62,7 +62,6 @@ export default async function CommunityPage({ params }: PageProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-charcoal)] via-[var(--color-charcoal)]/90 to-[var(--color-charcoal)]/60" />
         </div>
         <div className="relative z-10 container-wide">
-          <p className="section-label !text-[var(--color-sage)]">{c.hero.label}</p>
           <h1 className="text-headline font-display text-white max-w-3xl mb-5">{c.hero.title}</h1>
           <p className="text-white/65 text-xl leading-relaxed max-w-2xl mb-10">{c.hero.body}</p>
           <div className="flex flex-wrap gap-4">
@@ -79,7 +78,6 @@ export default async function CommunityPage({ params }: PageProps) {
       <section id="proyectos" className="section-padding bg-[var(--color-surface)] scroll-mt-24">
         <div className="container-wide">
           <div className="max-w-3xl mb-14">
-            <p className="section-label">{c.projects.label}</p>
             <h2 className="text-headline font-display text-[var(--color-charcoal)]">
               {c.projects.title}
             </h2>
@@ -112,7 +110,6 @@ export default async function CommunityPage({ params }: PageProps) {
       >
         <div className="container-wide grid lg:grid-cols-2 gap-14 items-center">
           <div>
-            <p className="section-label !text-[var(--color-sage)]">{c.collaborations.label}</p>
             <h2 className="text-headline font-display text-white mb-5">{c.collaborations.title}</h2>
             <p className="text-white/65 text-lg leading-relaxed mb-8">{c.collaborations.body}</p>
             <Link href={c.collaborations.cta.href} className="btn-primary">
@@ -140,7 +137,6 @@ export default async function CommunityPage({ params }: PageProps) {
 
       <section className="section-padding bg-[var(--color-cream)]">
         <div className="container-narrow text-center">
-          <p className="section-label justify-center">{c.news.label}</p>
           <h2 className="text-title font-display text-[var(--color-charcoal)] mb-4">
             {c.news.title}
           </h2>

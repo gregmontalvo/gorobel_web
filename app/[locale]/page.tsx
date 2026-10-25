@@ -46,7 +46,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <ActivitiesPreview content={content.activities} />
       <CentersPreview content={content.centers} />
       <CommunitySection content={content.community} />
-      <FaqSection label={content.faq.label} heading={content.faq.title} faqs={content.faq.items} />
+      <FaqSection heading={content.faq.title} faqs={content.faq.items} />
       <FinalCta content={content.finalCta} />
     </>
   );
